@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cy70r0x5q8s3k"]
+
+[ext_resource type="Shader" path="res://World/Objects/test_drag_object.gdshader" id="1_q46g6"]
+
+[resource]
+shader = ExtResource("1_q46g6")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 8.0

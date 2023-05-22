@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 210.0
 const JUMP_VELOCITY = -400.0
 
@@ -7,7 +9,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var facing_direction = 1
 
-signal mouse_in 
+signal dead
+
+func _ready():
+	set_physics_process(false)
 
 func _physics_process(delta):
 	if not is_on_floor():
@@ -24,9 +29,10 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+func kill():
+	set_physics_process(false)
+	emit_signal("dead")
 
-func _on_area_2d_mouse_entered():
-	emit_signal("mouse_in", true)
-
-func _on_area_2d_mouse_exited():
-	emit_signal("mouse_in", false)
+func reset_start():
+	set_physics_process(true)
+	facing_direction = 1
