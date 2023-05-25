@@ -88,6 +88,7 @@ func make_fit():
 func fit_check():
 	var collisions = collision_area.get_overlapping_bodies()
 	collisions.erase(self)
+	collisions.erase(map)
 	if collisions.is_empty():
 		if last_available_position != position:
 			previous_available_position = last_available_position
