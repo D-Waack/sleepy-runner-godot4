@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cy70r0x5q8s3k"]
 
-[ext_resource type="Shader" path="res://World/Objects/Platform/test_drag_object.gdshader" id="1_vo3l5"]
+[ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="1_vo3l5"]
 
 [resource]
 resource_local_to_scene = true
