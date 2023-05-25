@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://qkcddvdcvhxo"]
+[gd_scene load_steps=9 format=3 uid="uid://qkcddvdcvhxo"]
 
 [ext_resource type="Script" path="res://World/Maps/Map.gd" id="1_hti4m"]
 [ext_resource type="PackedScene" uid="uid://b241uvbda12i4" path="res://World/Maps/TileMap.tscn" id="2_5w0gj"]
 [ext_resource type="Script" path="res://World/Maps/Common/Platforms.gd" id="3_76dou"]
+[ext_resource type="Script" path="res://World/Maps/Collectables.gd" id="4_hpsqh"]
 [ext_resource type="Script" path="res://World/Maps/Common/Camera.gd" id="6_gia51"]
 [ext_resource type="PackedScene" uid="uid://0avjotwae8ft" path="res://World/Entities/Player/Player.tscn" id="6_h4hor"]
 [ext_resource type="PackedScene" uid="uid://vjw55rhe6sxp" path="res://World/Objects/Goal/Goal.tscn" id="7_mgths"]
@@ -18,6 +19,7 @@ metadata/_edit_vertical_guides_ = []
 script = ExtResource("3_76dou")
 
 [node name="Collectables" type="Node2D" parent="."]
+script = ExtResource("4_hpsqh")
 
 [node name="Boundaries" type="Node2D" parent="."]
 
@@ -41,6 +43,7 @@ position = Vector2(48, 192)
 [node name="GUI" parent="." instance=ExtResource("8_nklev")]
 
 [connection signal="fit_to_grid" from="Platforms" to="." method="_on_objects_fit_to_grid"]
+[connection signal="item_collected" from="Collectables" to="." method="_on_collectables_item_collected"]
 [connection signal="goal_reached" from="Goal" to="." method="_on_goal_goal_reached"]
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="play_button_pressed" from="GUI" to="." method="_on_gui_play_button_pressed"]

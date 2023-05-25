@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsk47uyenioyq"]
+[gd_scene load_steps=8 format=3 uid="uid://dsk47uyenioyq"]
 
 [ext_resource type="PackedScene" uid="uid://r0dvuayrnyab" path="res://World/Maps/SnowMaps/SnowMap.tscn" id="1_8d7jj"]
 [ext_resource type="PackedScene" uid="uid://c443njvs1smcg" path="res://World/Objects/Platform/Platforms/SnowPlatform1.tscn" id="2_gwjym"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgkk27uaggxv6" path="res://World/Objects/Platform/Platforms/SnowPlatform2.tscn" id="4_0w73x"]
 [ext_resource type="PackedScene" uid="uid://eubewt4uuinm" path="res://World/Objects/Collectables/Shines/Shine.tscn" id="4_eptll"]
 [ext_resource type="PackedScene" uid="uid://dvypo718pww18" path="res://World/Objects/Platform/Platforms/SnowPlatform3.tscn" id="5_bkv2n"]
+[ext_resource type="PackedScene" uid="uid://m6rrkgpe6mkk" path="res://World/Objects/Platform/Platforms/SnowPlatform4.tscn" id="6_e8m4a"]
 
 [node name="TestMap" instance=ExtResource("1_8d7jj")]
 
@@ -13,25 +14,25 @@
 layer_0/tile_data = PackedInt32Array(851970, 655361, 0, 917506, 589825, 3, 917505, 589825, 3, 851968, 655361, 0, 917504, 589825, 3, 851969, 655361, 0, 851971, 327681, 0, 917507, 589825, 3, 917508, 589825, 3, 917509, 589825, 3, 851973, 327681, 0, 851972, 393217, 0, 851974, 393217, 0, 917510, 589825, 3, 851975, 196609, 0, 917511, 196609, 2, 917503, 720897, 1, 983039, 589825, 3, 851967, 720897, 2, 786431, 720897, 2, 720895, 720897, 2, 655359, 720897, 2, 589823, 720897, 2, 524287, 720897, 2, 458751, 720897, 2, 393215, 720897, 2, 327679, 720897, 2, 262143, 720897, 2, 196607, 720897, 2, 131071, 720897, 2, 65535, 720897, 0, 65534, 524289, 0, 131070, 524289, 1, 196606, 524289, 1, 262142, 524289, 1, 327678, 524289, 1, 393214, 524289, 1, 458750, 524289, 1, 524286, 524289, 1, 589822, 524289, 1, 655358, 524289, 1, 720894, 524289, 1, 786430, 524289, 1, 851966, 524289, 1, 917502, 524289, 1, 983038, 524289, 3, 852044, 524291, 0, 852045, 655363, 0, 852046, 655363, 0, 852047, 655363, 0, 852048, 655363, 0, 852049, 655363, 0, 852050, 655363, 0, 852051, 655363, 0, 852052, 655363, 0, 852053, 655363, 0, 852054, 655363, 0, 852055, 655363, 0, 852056, 655363, 0, 852057, 655363, 0, 852058, 720899, 0, 917594, 720899, 2, 917593, 589827, 2, 917592, 589827, 2, 917591, 589827, 2, 917590, 589827, 2, 917589, 589827, 2, 917588, 589827, 2, 917587, 589827, 2, 917586, 589827, 2, 917585, 589827, 2, 917584, 589827, 2, 917583, 589827, 2, 917582, 589827, 2, 917581, 589827, 2, 917580, 524291, 2, 983128, 589827, 3, 983127, 589827, 3, 983126, 589827, 3, 983125, 589827, 3, 983124, 589827, 3, 983123, 589827, 3, 983122, 589827, 3, 983121, 589827, 3, 983120, 589827, 3, 983119, 589827, 3, 983118, 589827, 3, 983117, 589827, 3, 983116, 524291, 3, 983129, 589827, 3, 983130, 720899, 3)
 
 [node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_gwjym")]
-position = Vector2(224, 16)
+position = Vector2(864, 48)
 
-[node name="Platform3" parent="Platforms" index="1" instance=ExtResource("2_gwjym")]
-position = Vector2(1040, 224)
-
-[node name="Platform6" parent="Platforms" index="2" instance=ExtResource("2_gwjym")]
-position = Vector2(800, 32)
-
-[node name="Platform2" parent="Platforms" index="3" instance=ExtResource("3_q4a82")]
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("3_q4a82")]
 position = Vector2(384, 80)
 
-[node name="Platform4" parent="Platforms" index="4" instance=ExtResource("4_0w73x")]
+[node name="Platform4" parent="Platforms" index="2" instance=ExtResource("4_0w73x")]
 position = Vector2(208, 192)
 
-[node name="Platform5" parent="Platforms" index="5" instance=ExtResource("4_0w73x")]
+[node name="Platform5" parent="Platforms" index="3" instance=ExtResource("4_0w73x")]
 position = Vector2(816, 192)
 
-[node name="Platform7" parent="Platforms" index="6" instance=ExtResource("5_bkv2n")]
+[node name="Platform7" parent="Platforms" index="4" instance=ExtResource("5_bkv2n")]
 position = Vector2(624, 112)
+
+[node name="Platform3" parent="Platforms" index="5" instance=ExtResource("6_e8m4a")]
+position = Vector2(1008, 80)
+
+[node name="Platform6" parent="Platforms" index="6" instance=ExtResource("6_e8m4a")]
+position = Vector2(192, 32)
 
 [node name="Collectable" parent="Collectables" index="0" instance=ExtResource("4_eptll")]
 position = Vector2(384, 176)
@@ -46,6 +47,6 @@ position = Vector2(1072, 168)
 position = Vector2(1392, 240)
 
 [node name="Goal" parent="." index="4"]
-position = Vector2(1328, 192)
+position = Vector2(1312, 192)
 
 [connection signal="kill_player" from="Platforms" to="." method="_on_platforms_kill_player"]

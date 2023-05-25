@@ -31,6 +31,11 @@ const object_drag_camera_ratio = 2.0 # velocidade de deslize da câmera
 const right_drag_threshold = 0.85 # porcentagem máxima da tela para deslize durante arrasto de objeto
 const left_drag_threshold = 0.15 # porcentagem mínima da tela para deslize durante arrasto de objeto
 
+# Variáveis de status
+var time_taken = 0.0
+var shines_collected = 0
+var puzzle_collected = false
+
 # Configuração inicial
 func _ready():
 	# Limites da câmera são configurados
@@ -136,8 +141,15 @@ func _on_goal_goal_reached():
 	current_state = control_states.VICTORY
 	
 	# Mostrar a tela de vitória
-	interface.show_victory()
+	interface.show_victory(shines_collected, puzzle_collected)
 
 ## Quando o personagem colidir com algum obstáculo
 func _on_platforms_kill_player():
 	player.kill() 
+
+func _on_collectables_item_collected(item_type):
+	match item_type:
+		0:
+			shines_collected += 1
+		1:
+			puzzle_collected = true
