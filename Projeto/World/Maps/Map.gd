@@ -109,8 +109,16 @@ func _on_gui_play_button_pressed():
 	objects.block_grabbing(true)
 	
 	# update em variáveis de controle
-	play_pressed = true
 	camera.can_drag = false
+	
+	# volta a câmera a posição inicial
+	var tween = create_tween()
+	tween.tween_property(camera, "position:x", player.position.x, 0.5)
+	tween.tween_property(camera, "position:x", player.position.x, 0.2)
+	await tween.finished
+	
+	# segundo update para variáveis de controle
+	play_pressed = true
 	
 	# movimento e física do player são liberados
 	player.reset_start()
