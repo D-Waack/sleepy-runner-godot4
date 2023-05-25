@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://l1faff1x55u7"]
+[gd_scene load_steps=4 format=3 uid="uid://l1faff1x55u7"]
 
 [ext_resource type="Script" path="res://Interface/GUI.gd" id="1_8d3ng"]
 [ext_resource type="Texture2D" uid="uid://bue6u7axbhruh" path="res://Interface/playbutton.png" id="2_h2nvb"]
+[ext_resource type="Texture2D" uid="uid://8xj5oakudw6c" path="res://World/Maps/Common/background_snow.png" id="3_1hgcp"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -50,5 +51,14 @@ text = "
 [center]Parabéns!
 
 Você venceu!"
+
+[node name="Background" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/Background"]
+motion_mirroring = Vector2(320, 0)
+
+[node name="BackgroundSnow" type="Sprite2D" parent="CanvasLayer/Background/ParallaxLayer"]
+position = Vector2(160, 120)
+texture = ExtResource("3_1hgcp")
 
 [connection signal="button_up" from="CanvasLayer/PlayButton" to="." method="_on_play_button_button_up"]
