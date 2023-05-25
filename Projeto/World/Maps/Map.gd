@@ -3,7 +3,7 @@ extends Node2D
 # Variaveis de nós
 ## Objetos, limites e mapa
 @onready var tilemap = $Map
-@onready var objects = $Objects
+@onready var objects = $Platforms
 
 ## Personagens, câmera
 @onready var camera = $Camera
@@ -137,3 +137,7 @@ func _on_goal_goal_reached():
 	
 	# Mostrar a tela de vitória
 	interface.show_victory()
+
+## Quando o personagem colidir com algum obstáculo
+func _on_platforms_kill_player():
+	player.kill() 
