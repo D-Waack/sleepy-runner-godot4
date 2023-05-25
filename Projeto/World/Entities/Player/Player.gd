@@ -28,6 +28,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	if is_on_wall():
+		velocity.y = JUMP_VELOCITY/2
 		facing_direction *= -1
 
 	var direction = facing_direction
