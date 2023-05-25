@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var sprite = $Sprite2D
 @onready var grab_timer = $Timer
 @onready var collision_area = $Area2D
+@onready var map = $Map
 
 # Constantes de shader
 const base_outline = 0.4
@@ -29,6 +30,8 @@ signal fit_to_grid
 func _ready():
 	last_available_position = position
 	previous_available_position = position
+	map.set_layer_enabled(1, false)
+	map.set_layer_modulate(1, Color.RED)
 
 # Função roda toda vez que existe algum input do jogador
 func _input_event(_viewport, event, _shape_idx):
@@ -66,6 +69,10 @@ func _on_timer_timeout():
 # Ativa ou desativa shader para visualização de seleção
 func outline_width(value: float) -> void:
 	sprite.material.set_shader_parameter("width", value)
+	if value > 0:
+		map.set_layer_enabled(1, true)
+	else:
+		map.set_layer_enabled(1, false)
 
 # Emite sinal para que o objeto possa alcançar a posição esperada na grid
 func make_fit():
