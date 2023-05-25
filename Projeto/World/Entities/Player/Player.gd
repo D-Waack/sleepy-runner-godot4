@@ -11,6 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Variáveis de controle
 var facing_direction = 1
+var just_died = false
 
 # Sinais
 signal dead
@@ -28,8 +29,11 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	if is_on_wall():
-		velocity.y = JUMP_VELOCITY/2
-		facing_direction *= -1
+		if just_died:
+			just_died = false
+		else:
+			velocity.y = JUMP_VELOCITY/2
+			facing_direction *= -1
 
 	var direction = facing_direction
 	velocity.x = direction * SPEED
@@ -45,3 +49,4 @@ func kill():
 func reset_start():
 	set_physics_process(true)
 	facing_direction = 1
+	just_died = true
