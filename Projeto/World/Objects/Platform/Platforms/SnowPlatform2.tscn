@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgkk27uaggxv6"]
+
+[ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="1_epc55"]
+[ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="2_u8rsv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwuvk"]
+resource_local_to_scene = true
+shader = ExtResource("2_u8rsv")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[node name="Platform" instance=ExtResource("1_epc55")]
+
+[node name="Map" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(0, 524289, 0, 1, 655361, 0, 2, 655361, 0, 3, 655361, 0, 4, 720897, 0, 65536, 524289, 3, 65537, 327681, 2, 65538, 589825, 2, 65539, 589825, 2, 65540, 720897, 2, 131073, 524289, 3, 131074, 327681, 2, 131075, 393217, 2, 196611, 720897, 3, 131076, 720897, 3, 196610, 524289, 3)
+layer_1/tile_data = PackedInt32Array(0, 589828, 0, 1, 720900, 0, 2, 720900, 0, 3, 720900, 0, 4, 131076, 0, 65540, 917508, 0, 131076, 262148, 0, 196611, 262148, 0, 196610, 196612, 0, 131073, 196612, 0, 65536, 196612, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+visible = false
+polygon = PackedVector2Array(1, 16, 17, 1, 79, 1, 79, 47, 63, 47, 63, 63, 33, 63, 33, 47, 17, 47, 17, 31, 1, 31)
+
+[node name="Sprite2D" parent="." index="2"]
+visible = false
+material = SubResource("ShaderMaterial_jwuvk")
+texture = null
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" index="0"]
+visible = false
+position = Vector2(-40, -8)
+polygon = PackedVector2Array(1, 16, 17, 1, 79, 1, 79, 47, 63, 47, 63, 63, 33, 63, 33, 47, 17, 47, 17, 31, 1, 31)
