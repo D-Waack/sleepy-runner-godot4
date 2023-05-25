@@ -5,6 +5,7 @@ extends StaticBody2D
 @onready var grab_timer = $Timer
 @onready var collision_area = $Area2D
 @onready var map = $Map
+@onready var obstacles = $Obstacles
 
 # Constantes de shader
 const base_outline = 0.4
@@ -25,6 +26,7 @@ var previous_available_position = Vector2.ZERO
 
 # Sinal para encaixar objeto na grid
 signal fit_to_grid
+signal kill_player
 
 # Função de inicialização. Configura posições iniciais
 func _ready():
@@ -32,6 +34,9 @@ func _ready():
 	previous_available_position = position
 	map.set_layer_enabled(1, false)
 	map.set_layer_modulate(1, Color.RED)
+	
+	for obstacle in obstacles.get_children():
+		obstacle.connect("player_hit", _on_obstacle_player_hit)
 
 # Função roda toda vez que existe algum input do jogador
 func _input_event(_viewport, event, _shape_idx):
@@ -99,3 +104,6 @@ func fit_check():
 # Faz o reset da posição do objeto para a última posição disponível
 func reset_position():
 	position = last_available_position
+
+func _on_obstacle_player_hit():
+	emit_signal("kill_player")

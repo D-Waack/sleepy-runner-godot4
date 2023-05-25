@@ -1,15 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgkk27uaggxv6"]
+[gd_scene load_steps=15 format=3 uid="uid://dvypo718pww18"]
 
-[ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="1_epc55"]
-[ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/tileset_0.png" id="2_lcwi3"]
-[ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="2_u8rsv"]
-[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/autotile_snow.png" id="3_jpfuh"]
-[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/autotile_snow_right.png" id="4_66v2w"]
-[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/autotile_snow_slopeless.png" id="5_vpu24"]
-[ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Common/shapes_tiles.png" id="6_7nph1"]
+[ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="1_vkla4"]
+[ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/tileset_0.png" id="2_onpe1"]
+[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/autotile_snow.png" id="3_0qsvv"]
+[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/autotile_snow_right.png" id="4_jxwyn"]
+[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/autotile_snow_slopeless.png" id="5_4t6s2"]
+[ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Common/shapes_tiles.png" id="6_af3pu"]
+[ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="7_t0yer"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onouu"]
-texture = ExtResource("2_lcwi3")
+texture = ExtResource("2_onpe1")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -20,7 +20,7 @@ texture = ExtResource("2_lcwi3")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbnac"]
-texture = ExtResource("3_jpfuh")
+texture = ExtResource("3_0qsvv")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -494,7 +494,7 @@ texture = ExtResource("3_jpfuh")
 11:3/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ta8dq"]
-texture = ExtResource("4_66v2w")
+texture = ExtResource("4_jxwyn")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
@@ -967,7 +967,7 @@ texture = ExtResource("4_66v2w")
 11:3/0/terrains_peering_bit/top_side = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hoi41"]
-texture = ExtResource("5_vpu24")
+texture = ExtResource("5_4t6s2")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2
@@ -1439,7 +1439,7 @@ texture = ExtResource("5_vpu24")
 11:3/0/terrains_peering_bit/top_side = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klk1s"]
-texture = ExtResource("6_7nph1")
+texture = ExtResource("6_af3pu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1506,18 +1506,18 @@ sources/4 = SubResource("TileSetAtlasSource_klk1s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jwuvk"]
 resource_local_to_scene = true
-shader = ExtResource("2_u8rsv")
+shader = ExtResource("7_t0yer")
 shader_parameter/color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 shader_parameter/pattern = 2
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 
-[node name="Platform" instance=ExtResource("1_epc55")]
+[node name="Platform" instance=ExtResource("1_vkla4")]
 
 [node name="Map" parent="." index="0"]
 tile_set = SubResource("TileSet_7xtm2")
-layer_0/tile_data = PackedInt32Array(3, 655363, 0, 65538, 589827, 2, 131073, 327683, 2, 0, 524291, 0, 1, 655363, 0, 2, 655363, 0, 65537, 589827, 2, 65536, 524291, 2, 131072, 524291, 3, 131074, 589827, 2, 131075, 393219, 2, 65539, 589827, 2, 196611, 720899, 3, 196610, 655363, 3, 196609, 524291, 3, 262146, 3, 2, 4, 655363, 0, 5, 655363, 0, 6, 720899, 0, 65542, 720899, 3, 65541, 393219, 2, 65540, 589827, 2, 131076, 589827, 3, 131077, 720899, 3)
+layer_0/tile_data = PackedInt32Array(65542, 589827, 2, 131078, 393219, 2, 196613, 393219, 2, 131077, 589827, 2, 65541, 589827, 2, 65540, 589827, 2, 65539, 589827, 2, 131075, 589827, 2, 131074, 524291, 2, 196609, 720897, 2, 196608, 589825, 2, 65538, 524291, 2, 196610, 524291, 2, 196611, 589827, 2, 131076, 589827, 2, 196612, 589827, 2, 262145, 720897, 2, 262146, 524291, 3, 262147, 589827, 3, 262148, 589827, 3, 65543, 720899, 2, 131079, 720899, 3, 196614, 720899, 3, 262149, 720899, 3, 393216, 720897, 3, 327680, 393217, 2, 327681, 720897, 3, 262144, 589825, 2, 65537, 720897, 2, 131073, 720897, 2, 65536, 327681, 1, 131072, 589825, 2, 196607, 327681, 1, 262143, 589825, 2, 327679, 589825, 2, 393215, 589825, 2, 458751, 589825, 3, 458750, 589825, 3, 393214, 589825, 2, 327678, 589825, 2, 262142, 327681, 1, 393213, 589825, 2, 458749, 589825, 3, 327677, 327681, 1, 458748, 524289, 3, 393212, 524289, 1, 0, 524289, 0, 131071, 524289, 0, 196606, 524289, 0, 262141, 524289, 0, 327676, 524289, 0, 1, 720897, 0, 5, 655363, 0, 4, 655363, 0, 3, 655363, 0, 2, 524291, 0, 6, 655363, 0, 7, 720899, 0)
 layer_1/tile_data = PackedInt32Array(1, 720900, 0, 2, 720900, 0, 3, 720900, 0, 0, 65540, 0, 6, 131076, 0, 4, 720900, 0, 5, 720900, 0, 65542, 262148, 0, 131072, 196612, 0, 196609, 196612, 0, 196611, 262148, 0, 131077, 262148, 0, 131076, 786436, 0, 65536, 851972, 0, 262146, 393220, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
