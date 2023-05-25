@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6v2yj"]
 
-[node name="Collectable" instance=ExtResource("1_dw1vm")]
+[node name="Shine" instance=ExtResource("1_dw1vm")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_6v2yj")
