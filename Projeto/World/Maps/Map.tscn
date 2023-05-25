@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbqgsjbjkmmgs"]
+[gd_scene load_steps=11 format=3 uid="uid://qkcddvdcvhxo"]
 
 [ext_resource type="Script" path="res://World/Maps/Map.gd" id="1_hti4m"]
 [ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/tileset_0.png" id="2_iy08h"]
-[ext_resource type="Script" path="res://World/Maps/Objects.gd" id="3_ss6mx"]
-[ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/test_drag_object.tscn" id="4_ma1mo"]
-[ext_resource type="Script" path="res://World/Maps/Camera2D.gd" id="5_hc2b8"]
+[ext_resource type="Script" path="res://World/Maps/Common/Objects.gd" id="3_ys7tp"]
+[ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="4_ma1mo"]
+[ext_resource type="Script" path="res://World/Maps/Common/Camera.gd" id="6_gia51"]
 [ext_resource type="PackedScene" uid="uid://0avjotwae8ft" path="res://World/Entities/Player/Player.tscn" id="6_h4hor"]
-[ext_resource type="PackedScene" uid="uid://vjw55rhe6sxp" path="res://World/Objects/Goal.tscn" id="7_mgths"]
+[ext_resource type="PackedScene" uid="uid://vjw55rhe6sxp" path="res://World/Objects/Goal/Goal.tscn" id="7_mgths"]
 [ext_resource type="PackedScene" uid="uid://l1faff1x55u7" path="res://Interface/GUI.tscn" id="8_nklev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onouu"]
@@ -34,7 +34,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(851970, 65536, 0, 917506, 65536, 0, 917505, 65536, 0, 851968, 65536, 0, 917504, 65536, 0, 851969, 65536, 0, 851971, 65536, 0, 917507, 65536, 0, 917508, 65536, 0, 917509, 65536, 0, 851973, 65536, 0, 851972, 65536, 0, 851974, 65536, 0, 917510, 65536, 0, 851975, 65536, 0, 917511, 65536, 0, 131071, 65536, 0, 196607, 65536, 0, 196606, 65536, 0, 262142, 65536, 0, 327678, 65536, 0, 393214, 65536, 0, 458750, 65536, 0, 524286, 65536, 0, 589822, 65536, 0, 589823, 65536, 0, 655359, 65536, 0, 720895, 65536, 0, 786431, 65536, 0, 851967, 65536, 0, 524287, 65536, 0, 458751, 65536, 0, 393215, 65536, 0, 327679, 65536, 0, 262143, 65536, 0, 655358, 65536, 0, 720894, 65536, 0, 786430, 65536, 0, 851966, 65536, 0, 131070, 65536, 0, 852019, 65536, 0, 852020, 65536, 0, 852021, 65536, 0, 852022, 65536, 0, 852023, 65536, 0, 917560, 65536, 0, 917559, 65536, 0, 917558, 65536, 0, 917557, 65536, 0, 917556, 65536, 0, 917555, 65536, 0, 852024, 65536, 0, 65568, 65536, 0, 131104, 65536, 0, 196640, 65536, 0, 262176, 65536, 0, 327712, 65536, 0, 327713, 65536, 0, 262177, 65536, 0, 196641, 65536, 0, 131105, 65536, 0, 65569, 65536, 0, 917536, 65536, 0, 852000, 65536, 0, 852001, 65536, 0, 917537, 65536, 0, 393248, 65536, 0, 458784, 65536, 0, 524320, 65536, 0, 524321, 65536, 0, 458785, 65536, 0, 393249, 65536, 0)
 
 [node name="Objects" type="Node2D" parent="."]
-script = ExtResource("3_ss6mx")
+script = ExtResource("3_ys7tp")
 
 [node name="TestDragObject" parent="Objects" instance=ExtResource("4_ma1mo")]
 position = Vector2(130, 108)
@@ -60,11 +60,12 @@ position = Vector2(0, 240)
 position = Vector2(912, 240)
 
 [node name="Goal" parent="." instance=ExtResource("7_mgths")]
+position = Vector2(864, 192)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(53, 198)
 position_smoothing_enabled = true
-script = ExtResource("5_hc2b8")
+script = ExtResource("6_gia51")
 
 [node name="Player" parent="." instance=ExtResource("6_h4hor")]
 position = Vector2(48, 192)
@@ -74,3 +75,4 @@ position = Vector2(48, 192)
 [connection signal="fit_to_grid" from="Objects" to="." method="_on_objects_fit_to_grid"]
 [connection signal="goal_reached" from="Goal" to="." method="_on_goal_goal_reached"]
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="play_button_pressed" from="GUI" to="." method="_on_gui_play_button_pressed"]
