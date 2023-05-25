@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjrojkhge8ujm"]
+
+[ext_resource type="Script" path="res://World/Objects/Platform/Platform.gd" id="1_ytsmq"]
+[ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="2_thtuw"]
+[ext_resource type="Texture2D" uid="uid://0r8d0nne85su" path="res://World/Objects/Platform/tileset_0.png" id="3_4rj6j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7eho"]
+size = Vector2(78, 14)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8k0km"]
+resource_local_to_scene = true
+shader = ExtResource("2_thtuw")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 2
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+
+[node name="Platform" type="StaticBody2D"]
+collision_mask = 3
+input_pickable = true
+script = ExtResource("1_ytsmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40, 8)
+shape = SubResource("RectangleShape2D_e7eho")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8k0km")
+position = Vector2(40, 8)
+scale = Vector2(2.5, 1)
+texture = ExtResource("3_4rj6j")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(40, 8)
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.8147e-06, 9.53674e-07)
+shape = SubResource("RectangleShape2D_e7eho")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
