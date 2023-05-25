@@ -125,7 +125,7 @@ func _on_objects_fit_to_grid(object):
 	next_position = Vector2(next_position.x - tilemap.tile_set.tile_size.x/2, next_position.y - tilemap.tile_set.tile_size.y/2)
 	
 	# Checando se a posição está dentro dos limites. Se está, atualizar a posição. Se não, resetar a posição
-	if next_position.y < limit_bottom and next_position.y > -16 and next_position.x > -16:
+	if next_position.y < limit_bottom and next_position.y > -tilemap.tile_set.tile_size.y and next_position.x > -tilemap.tile_set.tile_size.y:
 		object.position = next_position
 	else:
 		object.reset_position()
