@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://byk7fd1trpexg"]
+
+[ext_resource type="Script" path="res://World/Objects/DeathMarker/DeathMarker.gd" id="1_0qgjg"]
+[ext_resource type="Texture2D" uid="uid://rg214weotjvj" path="res://World/Objects/DeathMarker/death_marker.png" id="1_mpa31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1pwa7"]
+radius = 52.0384
+
+[node name="DeathMarker" type="Area2D"]
+script = ExtResource("1_0qgjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1pwa7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mpa31")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
