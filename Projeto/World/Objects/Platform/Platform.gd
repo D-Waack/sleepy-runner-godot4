@@ -6,6 +6,7 @@ extends StaticBody2D
 @onready var collision_area = $Area2D
 @onready var map = $Map
 @onready var obstacles = $Obstacles
+@onready var collectables = $Collectables
 
 # Constantes de shader
 const base_outline = 0.4
@@ -27,6 +28,7 @@ var previous_available_position = Vector2.ZERO
 # Sinal para encaixar objeto na grid
 signal fit_to_grid
 signal kill_player
+signal item_collected
 
 # Função de inicialização. Configura posições iniciais
 func _ready():
@@ -37,6 +39,9 @@ func _ready():
 	
 	for obstacle in obstacles.get_children():
 		obstacle.connect("player_hit", _on_obstacle_player_hit)
+	
+	for collectable in collectables.get_children():
+		collectable.connect("collected", _on_Collectable_collected)
 
 # Função roda toda vez que existe algum input do jogador
 func _input_event(_viewport, event, _shape_idx):
@@ -107,3 +112,6 @@ func reset_position():
 
 func _on_obstacle_player_hit():
 	emit_signal("kill_player")
+
+func _on_Collectable_collected(type):
+	emit_signal("item_collected", type)

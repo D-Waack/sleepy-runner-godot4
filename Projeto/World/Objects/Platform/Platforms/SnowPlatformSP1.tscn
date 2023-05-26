@@ -1538,9 +1538,6 @@ visible = false
 position = Vector2(-40, -8)
 polygon = PackedVector2Array(1, 15, 1, 1, 191, 1, 191, 15, 175, 15, 175, 49, 191, 49, 191, 63, 161, 63, 161, 47, 127, 47, 127, 63, 65, 63, 65, 47, 31, 47, 31, 63, 1, 63, 1, 49, 17, 49, 17, 31, 17, 15)
 
-[node name="Collectable" parent="." index="5" instance=ExtResource("8_5s6sa")]
-position = Vector2(97, -11)
-
 [node name="Spike" parent="Obstacles" index="0" instance=ExtResource("9_u7iia")]
 position = Vector2(8, -8)
 
@@ -1552,3 +1549,6 @@ position = Vector2(168, -8)
 
 [node name="Spike4" parent="Obstacles" index="3" instance=ExtResource("9_u7iia")]
 position = Vector2(184, -8)
+
+[node name="Collectable" parent="Collectables" index="0" instance=ExtResource("8_5s6sa")]
+position = Vector2(97, -11)
