@@ -1,15 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://l1faff1x55u7"]
+[gd_scene load_steps=14 format=3 uid="uid://l1faff1x55u7"]
 
 [ext_resource type="Script" path="res://Interface/GUI.gd" id="1_8d3ng"]
 [ext_resource type="Texture2D" uid="uid://bue6u7axbhruh" path="res://Interface/playbutton.png" id="2_h2nvb"]
+[ext_resource type="Texture2D" uid="uid://c4d8jraug3rgn" path="res://Interface/restart.png" id="3_84mal"]
 [ext_resource type="Texture2D" uid="uid://cf2xv07j4ymao" path="res://Interface/scoreboard.png" id="4_2u5fd"]
 [ext_resource type="Texture2D" uid="uid://67puo40g7bv7" path="res://World/Objects/Collectables/Shines/shine_empty.png" id="4_7d5la"]
+[ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/exit.png" id="4_pyagw"]
+[ext_resource type="Texture2D" uid="uid://dd121ybqs2skm" path="res://Interface/pause.png" id="4_rwj5g"]
+[ext_resource type="Texture2D" uid="uid://cc3hhshhl8v4l" path="res://Interface/jump.png" id="5_dya8p"]
 [ext_resource type="Texture2D" uid="uid://v0q8o7awd27a" path="res://World/Objects/Collectables/Shines/shine.png" id="5_ny7hq"]
+[ext_resource type="Texture2D" uid="uid://csj7tnh4m4vf4" path="res://Interface/death.png" id="5_qwrht"]
 [ext_resource type="Texture2D" uid="uid://c6deu8bxvr52y" path="res://World/Objects/Collectables/PuzzlePieces/puzzle_empty.png" id="6_4c1ru"]
 [ext_resource type="Texture2D" uid="uid://ccbgreq4f0nwg" path="res://World/Objects/Collectables/PuzzlePieces/puzzle.png" id="7_3tfu8"]
 [ext_resource type="Texture2D" uid="uid://bbwtvsyu7m282" path="res://World/Maps/Common/background_glacial_mountains.png" id="8_h231e"]
 
 [node name="GUI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -22,18 +28,160 @@ script = ExtResource("1_8d3ng")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PlayButton" type="TextureButton" parent="CanvasLayer"]
+[node name="LevelEdit" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
+layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -27.0
+offset_left = 253.0
 offset_top = 214.0
-offset_right = -11.0
-offset_bottom = 230.0
+offset_right = 269.0
+offset_bottom = 190.0
 grow_horizontal = 0
 grow_vertical = 2
 texture_normal = ExtResource("2_h2nvb")
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 183.0
+offset_right = 269.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_84mal")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 11.0
+offset_right = 269.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_pyagw")
+
+[node name="Run" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer/Run"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 214.0
+offset_right = 269.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_rwj5g")
+
+[node name="JumpButton" type="TextureButton" parent="CanvasLayer/Run"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 214.0
+offset_right = 16.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_dya8p")
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VictoryPanel3" type="ColorRect" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 282.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.733333)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Pause/VictoryPanel3"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+bbcode_enabled = true
+text = "
+
+
+
+[center]P A U S E
+"
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 214.0
+offset_right = 269.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_h2nvb")
+
+[node name="EditButton" type="TextureButton" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 183.0
+offset_right = 269.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_qwrht")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 11.0
+offset_right = 269.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_pyagw")
 
 [node name="VictoryPanel" type="TextureRect" parent="CanvasLayer"]
 visible = false
@@ -149,4 +297,11 @@ position = Vector2(230, 110)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("8_h231e")
 
-[connection signal="button_up" from="CanvasLayer/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/LevelEdit/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/LevelEdit/RestartButton" to="." method="_on_restart_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/LevelEdit/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Run/PauseButton" to="." method="_on_pause_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Run/JumpButton" to="." method="_on_jump_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Pause/ResumeButton" to="." method="_on_resume_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Pause/EditButton" to="." method="_on_edit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Pause/ExitButton" to="." method="_on_exit_button_button_up"]
