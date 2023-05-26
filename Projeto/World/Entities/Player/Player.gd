@@ -12,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 # Variáveis de controle
 var facing_direction = 1
 var just_died = false
+var jumped = false
 
 # Sinais
 signal dead
@@ -27,6 +28,9 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	elif jumped and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	jumped = false
 
 	if is_on_wall():
 		if just_died:
@@ -44,6 +48,8 @@ func _physics_process(delta):
 func kill():
 	set_physics_process(false)
 	emit_signal("dead")
+	jumped = false
+	velocity.y = 0
 
 # Reinicia o processo físico e reseta o personagem à posição padrão
 func reset_start():
