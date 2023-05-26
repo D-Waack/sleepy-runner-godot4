@@ -1,9 +1,13 @@
 extends Node2D
 
+# Cenas externas
+@onready var DeathMarker = preload("res://World/Objects/DeathMarker/DeathMarker.tscn")
+
 # Variaveis de nós
 ## Objetos, limites e mapa
 @onready var tilemap = $Map
 @onready var objects = $Platforms
+@onready var markers = $Markers
 
 ## Personagens, câmera
 @onready var camera = $Camera
@@ -13,10 +17,12 @@ extends Node2D
 @onready var interface = $GUI
 
 # Variáveis de controle e máquina de estados
-enum control_states {PREPARE, SELECT, RUN, VICTORY} # estados da máquina
+enum control_states {PREPARE, SELECT, RUN, VICTORY, PAUSE} # estados da máquina
 var current_state = 0 # estado atual
 
 var play_pressed = false # controle entre edição de mapa e execução
+
+var min_marker_distance = 32.0 
 
 # Variáveis de posicionamento
 const limit_top = 0.0 # não muda, pode ser constante
@@ -63,13 +69,18 @@ func _process(_delta):
 		control_states.PREPARE:
 			camera.can_drag = true
 		control_states.SELECT:
+			interface.set_level_edit()
 			camera.can_drag = false
 		control_states.RUN:
+			interface.set_run()
 			camera.follow_along(player)
+		# Pause não roda, pois a execução fica pausada
+#		control_states.PAUSE: 
+#			interface.set_pause()
 	
 	# Checks de estado
 	if player.position.y > limit_bottom:
-		player.kill() 
+		kill_player()
 
 # Subrotinas de Process
 ## Configura estado atual com base em algumas condições
@@ -87,6 +98,20 @@ func adjust_camera_position():
 	camera.position.y = min(limit_top, camera.position.y)
 	camera.position.y = max(limit_bottom, camera.position.y)
 
+## Faz o processo para matar o player
+func kill_player():
+	var nearby_marker = false
+	for marker in markers.get_children():
+		marker.set_visible(true)
+		if player.position.distance_to(marker.position) <= min_marker_distance:
+			nearby_marker = true
+	if not nearby_marker:
+		var new_marker = DeathMarker.instantiate()
+		markers.add_child(new_marker)
+		new_marker.position = Vector2(player.position.x, player.position.y - 10)
+		new_marker.sprite.set_modulate(Color(Color.WHITE,0.8))
+	player.kill()
+
 # Funções de sinais
 ## Quando o personagem morre
 func _on_player_dead(): # soft reset 
@@ -97,11 +122,11 @@ func _on_player_dead(): # soft reset
 	# objetos permitem edição outra vez
 	objects.block_grabbing(false)
 	
+	# update da interface
+	interface.set_level_edit()
+	
 	# player volta ao seu lugar
 	player.position = player_position
-	
-	# interface é resetada
-	interface.soft_reset()
 
 ## Quando botão de play é pressionado
 func _on_gui_play_button_pressed():
@@ -110,6 +135,10 @@ func _on_gui_play_button_pressed():
 	
 	# update em variáveis de controle
 	camera.can_drag = false
+	
+	# fazer com que os markers desapareçam
+	for marker in markers.get_children():
+		marker.set_visible(false)
 	
 	# volta a câmera a posição inicial
 	var tween = create_tween()
@@ -153,7 +182,7 @@ func _on_goal_goal_reached():
 
 ## Quando o personagem colidir com algum obstáculo
 func _on_platforms_kill_player():
-	player.kill() 
+	kill_player()
 
 func _on_collectables_item_collected(item_type):
 	match item_type:
@@ -161,3 +190,25 @@ func _on_collectables_item_collected(item_type):
 			shines_collected += 1
 		1:
 			puzzle_collected = true
+
+func _on_gui_restart_button_pressed():
+	get_tree().reload_current_scene()
+
+func _on_gui_jump_button_pressed():
+	player.jumped = true
+
+func _on_gui_edit_button_pressed():
+	interface.set_level_edit()
+	kill_player()
+	get_tree().paused = false
+
+func _on_gui_pause_button_pressed():
+	interface.set_pause()
+	get_tree().paused = true
+
+func _on_gui_resume_button_pressed():
+	get_tree().paused = false
+
+func _on_gui_exit_button_pressed():
+	#TODO
+	print("exitting!")

@@ -29,6 +29,8 @@ position = Vector2(0, 240)
 [node name="RightBoundary" type="Marker2D" parent="Boundaries"]
 position = Vector2(912, 240)
 
+[node name="Markers" type="Node2D" parent="."]
+
 [node name="Goal" parent="." instance=ExtResource("7_mgths")]
 position = Vector2(864, 192)
 

@@ -35,18 +35,25 @@ position = Vector2(1008, 80)
 position = Vector2(192, 32)
 
 [node name="Collectable" parent="Collectables" index="0" instance=ExtResource("4_eptll")]
-position = Vector2(384, 176)
+position = Vector2(256, 160)
 
 [node name="Collectable2" parent="Collectables" index="1" instance=ExtResource("4_eptll")]
 position = Vector2(704, 64)
 
 [node name="Collectable3" parent="Collectables" index="2" instance=ExtResource("4_eptll")]
-position = Vector2(1072, 168)
+position = Vector2(1104, 176)
 
 [node name="RightBoundary" parent="Boundaries" index="1"]
 position = Vector2(1392, 240)
 
-[node name="Goal" parent="." index="4"]
+[node name="Goal" parent="." index="5"]
 position = Vector2(1312, 192)
 
+[connection signal="item_collected" from="Platforms" to="." method="_on_collectables_item_collected"]
 [connection signal="kill_player" from="Platforms" to="." method="_on_platforms_kill_player"]
+[connection signal="edit_button_pressed" from="GUI" to="." method="_on_gui_edit_button_pressed"]
+[connection signal="exit_button_pressed" from="GUI" to="." method="_on_gui_exit_button_pressed"]
+[connection signal="jump_button_pressed" from="GUI" to="." method="_on_gui_jump_button_pressed"]
+[connection signal="pause_button_pressed" from="GUI" to="." method="_on_gui_pause_button_pressed"]
+[connection signal="restart_button_pressed" from="GUI" to="." method="_on_gui_restart_button_pressed"]
+[connection signal="resume_button_pressed" from="GUI" to="." method="_on_gui_resume_button_pressed"]
