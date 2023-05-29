@@ -8,7 +8,7 @@ class_name Player
 @onready var sprite = $Sprite2D
 
 # Constantes e variáveis físicas
-const SPEED = 210.0
+var SPEED = 160.0
 const JUMP_VELOCITY = -400.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -18,6 +18,7 @@ var facing_direction = 1
 var just_died = false
 var jumped = false
 var falling_threshold = -10.0
+@export var animation = false
 
 # Sinais
 signal dead
@@ -31,7 +32,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not animation:
 		velocity.y = JUMP_VELOCITY
 	elif jumped and is_on_floor():
 		velocity.y = JUMP_VELOCITY
