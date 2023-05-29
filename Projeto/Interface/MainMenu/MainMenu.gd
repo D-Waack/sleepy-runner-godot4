@@ -4,6 +4,7 @@ extends Control
 @onready var animator = $AnimationPlayer
 
 func _ready():
+	SaveManager.prepare_save()
 	animator.play("run")
 	player.set_physics_process(true)
 	player.SPEED = 120.0
