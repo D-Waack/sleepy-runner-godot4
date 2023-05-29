@@ -1,0 +1,307 @@
+[gd_scene load_steps=14 format=3 uid="uid://l1faff1x55u7"]
+
+[ext_resource type="Script" path="res://Interface/Textures/GUI.gd" id="1_tdiaa"]
+[ext_resource type="Texture2D" uid="uid://bue6u7axbhruh" path="res://Interface/Textures/playbutton.png" id="2_mnvoc"]
+[ext_resource type="Texture2D" uid="uid://c4d8jraug3rgn" path="res://Interface/Textures/restart.png" id="3_1wn5q"]
+[ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/Textures/exit.png" id="4_pl2ap"]
+[ext_resource type="Texture2D" uid="uid://dd121ybqs2skm" path="res://Interface/Textures/pause.png" id="5_8atl5"]
+[ext_resource type="Texture2D" uid="uid://cc3hhshhl8v4l" path="res://Interface/Textures/jump.png" id="6_3gkhd"]
+[ext_resource type="Texture2D" uid="uid://csj7tnh4m4vf4" path="res://Interface/Textures/death.png" id="7_e1mcc"]
+[ext_resource type="Texture2D" uid="uid://cf2xv07j4ymao" path="res://Interface/Textures/scoreboard.png" id="8_tulk7"]
+[ext_resource type="Texture2D" uid="uid://67puo40g7bv7" path="res://World/Objects/Collectables/Shines/shine_empty.png" id="9_sak07"]
+[ext_resource type="Texture2D" uid="uid://v0q8o7awd27a" path="res://World/Objects/Collectables/Shines/shine.png" id="10_qnjp3"]
+[ext_resource type="Texture2D" uid="uid://c6deu8bxvr52y" path="res://World/Objects/Collectables/PuzzlePieces/puzzle_empty.png" id="11_5x6i6"]
+[ext_resource type="Texture2D" uid="uid://ccbgreq4f0nwg" path="res://World/Objects/Collectables/PuzzlePieces/puzzle.png" id="12_svbap"]
+[ext_resource type="Texture2D" uid="uid://bbwtvsyu7m282" path="res://World/Maps/Common/background_glacial_mountains.png" id="13_a0823"]
+
+[node name="GUI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tdiaa")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelEdit" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 214.0
+offset_right = 269.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_mnvoc")
+
+[node name="RestartButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 183.0
+offset_right = 269.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_1wn5q")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 11.0
+offset_right = 269.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_pl2ap")
+
+[node name="Run" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseButton" type="TextureButton" parent="CanvasLayer/Run"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 214.0
+offset_right = 269.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_8atl5")
+
+[node name="JumpButton" type="TextureButton" parent="CanvasLayer/Run"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 214.0
+offset_right = 16.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("6_3gkhd")
+
+[node name="Pause" type="Control" parent="CanvasLayer"]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VictoryPanel3" type="ColorRect" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 282.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.733333)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Pause/VictoryPanel3"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+bbcode_enabled = true
+text = "
+
+
+
+[center]P A U S E
+"
+
+[node name="ResumeButton" type="TextureButton" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 214.0
+offset_right = 269.0
+offset_bottom = 190.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("2_mnvoc")
+
+[node name="EditButton" type="TextureButton" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 183.0
+offset_right = 269.0
+offset_bottom = 159.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("7_e1mcc")
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/Pause"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 253.0
+offset_top = 11.0
+offset_right = 269.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_pl2ap")
+
+[node name="VictoryPanel" type="TextureRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -185.0
+offset_right = 64.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_tulk7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 19.0
+offset_right = 118.0
+offset_bottom = 149.0
+text = " 
+Shines: 
+Puzzle:
+"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 122.0
+offset_bottom = 149.0
+bbcode_enabled = true
+text = "[center] Victory!"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 47.0
+offset_right = 117.0
+offset_bottom = 63.0
+texture = ExtResource("9_sak07")
+stretch_mode = 1
+
+[node name="ShineDisplay" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 47.0
+offset_right = 117.0
+offset_bottom = 63.0
+texture = ExtResource("10_qnjp3")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 85.0
+texture = ExtResource("11_5x6i6")
+stretch_mode = 1
+
+[node name="PuzzleDisplay" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 69.0
+offset_right = 100.0
+offset_bottom = 85.0
+texture = ExtResource("12_svbap")
+stretch_mode = 1
+
+[node name="Rank" type="RichTextLabel" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 85.0
+offset_right = 118.0
+offset_bottom = 149.0
+bbcode_enabled = true
+text = "
+[center]A+
+"
+
+[node name="VictoryPanel2" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.733333)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VictoryPanel2"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+bbcode_enabled = true
+text = "
+
+
+
+[center]Parabéns!
+
+Você venceu!"
+
+[node name="Background" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/Background"]
+motion_mirroring = Vector2(460.8, 0)
+
+[node name="BackgroundSnow" type="Sprite2D" parent="CanvasLayer/Background/ParallaxLayer"]
+position = Vector2(230, 110)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("13_a0823")
+
+[connection signal="button_up" from="CanvasLayer/LevelEdit/PlayButton" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/LevelEdit/RestartButton" to="." method="_on_restart_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/LevelEdit/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Run/PauseButton" to="." method="_on_pause_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Run/JumpButton" to="." method="_on_jump_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Pause/ResumeButton" to="." method="_on_resume_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Pause/EditButton" to="." method="_on_edit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Pause/ExitButton" to="." method="_on_exit_button_button_up"]
