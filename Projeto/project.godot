@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Sleepy Runner "
-run/main_scene="res://World/Maps/Map.tscn"
+run/main_scene="res://Interface/MainMenu/MainMenu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="*res://Managing/SaveManager.gd"
 
 [display]
 
