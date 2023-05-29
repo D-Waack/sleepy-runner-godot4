@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://dwafpkywunvy6"]
+
+[ext_resource type="Script" path="res://Managing/Persistent/Stats.gd" id="1_38kmw"]
+
+[resource]
+script = ExtResource("1_38kmw")
+world1 = [[0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0]]
