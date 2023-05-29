@@ -61,7 +61,7 @@ offset_bottom = 169.667
 texture = ExtResource("4_an4v4")
 stretch_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="StageStats"]
+[node name="PuzzleDisplay" type="TextureRect" parent="StageStats"]
 visible = false
 layout_mode = 0
 offset_left = 40.6667
@@ -71,7 +71,7 @@ offset_bottom = 208.0
 texture = ExtResource("5_lyexa")
 stretch_mode = 1
 
-[node name="PuzzleDisplay" type="TextureRect" parent="StageStats"]
+[node name="TextureRect4" type="TextureRect" parent="StageStats"]
 layout_mode = 0
 offset_left = 40.6667
 offset_top = 200.0

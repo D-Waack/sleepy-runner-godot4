@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://World/Maps/Common/Camera.gd" id="6_gia51"]
 [ext_resource type="PackedScene" uid="uid://0avjotwae8ft" path="res://World/Entities/Player/Player.tscn" id="6_h4hor"]
 [ext_resource type="PackedScene" uid="uid://vjw55rhe6sxp" path="res://World/Objects/Goal/Goal.tscn" id="7_mgths"]
-[ext_resource type="PackedScene" uid="uid://l1faff1x55u7" path="res://Interface/GUI.tscn" id="8_nklev"]
+[ext_resource type="PackedScene" uid="uid://l1faff1x55u7" path="res://Interface/Textures/GUI.tscn" id="8_nklev"]
 
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_hti4m")

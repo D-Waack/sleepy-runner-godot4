@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwuwbnyw5amia"]
+[gd_scene load_steps=5 format=3 uid="uid://dwuwbnyw5amia"]
 
 [ext_resource type="Texture2D" uid="uid://d2goxn3ich27u" path="res://World/Maps/Common/LevelSelect/stage_select_snow.png" id="1_2088f"]
+[ext_resource type="Script" path="res://World/Maps/StageSelect.gd" id="1_ifdc5"]
 [ext_resource type="PackedScene" uid="uid://dm4bw3mtvnmfa" path="res://World/Maps/StageIcon.tscn" id="2_ynipx"]
 [ext_resource type="PackedScene" uid="uid://dsk47uyenioyq" path="res://World/Maps/SnowMaps/SnowMap1.tscn" id="3_4uqct"]
 
 [node name="StageSelect" type="Node2D"]
+script = ExtResource("1_ifdc5")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(160, 120)
 texture = ExtResource("1_2088f")
 
-[node name="StageIcon" parent="." instance=ExtResource("2_ynipx")]
+[node name="Stages" type="Node2D" parent="."]
+
+[node name="StageIcon" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(53, 36)
 stage_scene = ExtResource("3_4uqct")
