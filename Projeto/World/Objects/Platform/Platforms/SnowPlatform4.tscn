@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="1_6t3dq"]
 [ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/tileset_0.png" id="2_ejw41"]
-[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/autotile_snow.png" id="3_oafq7"]
-[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/autotile_snow_right.png" id="4_lqsyc"]
-[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/autotile_snow_slopeless.png" id="5_naeil"]
+[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/Textures/autotile_snow.png" id="3_qd87c"]
+[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/Textures/autotile_snow_right.png" id="4_h65wg"]
+[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/Textures/autotile_snow_slopeless.png" id="5_fs7vw"]
 [ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Common/shapes_tiles.png" id="6_d13ph"]
 [ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="7_04r1e"]
 
@@ -20,7 +20,7 @@ texture = ExtResource("2_ejw41")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbnac"]
-texture = ExtResource("3_oafq7")
+texture = ExtResource("3_qd87c")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -494,7 +494,7 @@ texture = ExtResource("3_oafq7")
 11:3/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ta8dq"]
-texture = ExtResource("4_lqsyc")
+texture = ExtResource("4_h65wg")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
@@ -967,7 +967,7 @@ texture = ExtResource("4_lqsyc")
 11:3/0/terrains_peering_bit/top_side = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hoi41"]
-texture = ExtResource("5_naeil")
+texture = ExtResource("5_fs7vw")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2

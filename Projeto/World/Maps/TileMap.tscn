@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://b241uvbda12i4"]
 
 [ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/tileset_0.png" id="1_lsrix"]
-[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/autotile_snow.png" id="2_alpm0"]
-[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/autotile_snow_right.png" id="3_fnb06"]
-[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/autotile_snow_slopeless.png" id="4_t4lj5"]
+[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/Textures/autotile_snow.png" id="2_alpm0"]
+[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/Textures/autotile_snow_right.png" id="3_fnb06"]
+[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/Textures/autotile_snow_slopeless.png" id="4_t4lj5"]
 [ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Common/shapes_tiles.png" id="5_rs4pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onouu"]
