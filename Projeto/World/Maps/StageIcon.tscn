@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm4bw3mtvnmfa"]
+
+[ext_resource type="Texture2D" uid="uid://76epebo3c5y1" path="res://World/Maps/Common/LevelSelect/StageIcon/stage_icon.png" id="1_2wv6q"]
+[ext_resource type="Script" path="res://World/Maps/StageIcon.gd" id="1_8lxr7"]
+[ext_resource type="Texture2D" uid="uid://c4xd1dvq1v2sr" path="res://World/Maps/Common/LevelSelect/StageIcon/littleshine_empty.png" id="3_uf0h8"]
+[ext_resource type="Texture2D" uid="uid://cpcrxlts5aqj3" path="res://World/Maps/Common/LevelSelect/StageIcon/littleshine.png" id="4_an4v4"]
+[ext_resource type="Texture2D" uid="uid://bm3xfpdl60vc0" path="res://World/Maps/Common/LevelSelect/StageIcon/littlepuzzle.png" id="5_lyexa"]
+[ext_resource type="Texture2D" uid="uid://ts437oogmtfy" path="res://World/Maps/Common/LevelSelect/StageIcon/littlepuzzle_empty.png" id="6_q8dqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwybq"]
+size = Vector2(34, 34)
+
+[node name="StageIcon" type="Area2D"]
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_8lxr7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lwybq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2wv6q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+text = "1"
+horizontal_alignment = 1
+
+[node name="StageStats" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -185.0
+offset_right = 64.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="StageStats"]
+layout_mode = 0
+offset_left = 27.3333
+offset_top = 161.667
+offset_right = 57.3333
+offset_bottom = 169.667
+texture = ExtResource("3_uf0h8")
+stretch_mode = 1
+
+[node name="ShineDisplay" type="TextureRect" parent="StageStats"]
+visible = false
+layout_mode = 0
+offset_left = 27.3333
+offset_top = 161.667
+offset_right = 57.3333
+offset_bottom = 169.667
+texture = ExtResource("4_an4v4")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="StageStats"]
+visible = false
+layout_mode = 0
+offset_left = 40.6667
+offset_top = 200.0
+offset_right = 48.6667
+offset_bottom = 208.0
+texture = ExtResource("5_lyexa")
+stretch_mode = 1
+
+[node name="PuzzleDisplay" type="TextureRect" parent="StageStats"]
+layout_mode = 0
+offset_left = 40.6667
+offset_top = 200.0
+offset_right = 48.6667
+offset_bottom = 208.0
+texture = ExtResource("6_q8dqj")
+stretch_mode = 1
+
+[node name="Rank" type="RichTextLabel" parent="StageStats"]
+layout_mode = 0
+offset_left = 75.6667
+offset_top = 153.333
+offset_right = 103.667
+offset_bottom = 177.333
+bbcode_enabled = true
+text = "[center][color=black]A+"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
