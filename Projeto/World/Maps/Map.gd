@@ -212,3 +212,7 @@ func _on_gui_resume_button_pressed():
 func _on_gui_exit_button_pressed():
 	#TODO
 	print("exitting!")
+
+func _on_gui_save_game():
+	SaveManager.stats.world1[GlobalVariables.current_stage_index] = [shines_collected, puzzle_collected, 0]
+	SaveManager.write_savegame()

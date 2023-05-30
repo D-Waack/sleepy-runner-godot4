@@ -265,6 +265,26 @@ text = "
 [center]A+
 "
 
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 156.0
+offset_right = 110.0
+offset_bottom = 178.0
+texture_normal = ExtResource("8_tulk7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/VictoryPanel/TextureButton"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -2.0
+offset_right = 105.0
+offset_bottom = 139.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Continue"
+
 [node name="VictoryPanel2" type="ColorRect" parent="CanvasLayer"]
 visible = false
 anchors_preset = 15
@@ -305,3 +325,4 @@ texture = ExtResource("13_a0823")
 [connection signal="button_up" from="CanvasLayer/Pause/ResumeButton" to="." method="_on_resume_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Pause/EditButton" to="." method="_on_edit_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Pause/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/VictoryPanel/TextureButton" to="." method="_on_texture_button_button_up"]

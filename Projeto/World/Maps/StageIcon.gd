@@ -16,6 +16,7 @@ func _input(event):
 	if not mouse_in: return
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			GlobalVariables.current_stage_index = stage_index
 			get_tree().change_scene_to_packed(stage_scene)
 
 func _on_mouse_entered():

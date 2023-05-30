@@ -20,6 +20,8 @@ signal resume_button_pressed
 signal edit_button_pressed
 signal exit_button_pressed
 
+signal save_game
+
 # Emite o sinal para o botão de play
 func _on_play_button_button_up():
 	emit_signal("play_button_pressed")
@@ -69,3 +71,7 @@ func show_victory(shine_count, puzzle_get):
 		puzzle_display.set_size(Vector2(tile_size, tile_size))
 	else:
 		puzzle_display.set_visible(false)
+
+func _on_texture_button_button_up():
+	emit_signal("save_game")
+	get_tree().change_scene_to_file("res://World/Maps/StageSelect.tscn")
