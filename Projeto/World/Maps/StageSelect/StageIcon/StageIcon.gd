@@ -7,10 +7,15 @@ extends Area2D
 @onready var puzzle_display = $StageStats/PuzzleDisplay
 @onready var rank = $StageStats/Rank
 
+@onready var stage_number = $Label
+
 var mouse_in = false
 
 const tile_size = 10
 const tile_size_y = 8
+
+func _ready():
+	stage_number.text = str(stage_index + 1)
 
 func _input(event):
 	if not mouse_in: return
