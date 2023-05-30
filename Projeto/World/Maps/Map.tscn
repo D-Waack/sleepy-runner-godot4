@@ -48,5 +48,6 @@ position = Vector2(48, 192)
 [connection signal="item_collected" from="Collectables" to="." method="_on_collectables_item_collected"]
 [connection signal="goal_reached" from="Goal" to="." method="_on_goal_goal_reached"]
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
+[connection signal="back_to_stage_select" from="GUI" to="." method="_on_gui_back_to_stage_select"]
 [connection signal="play_button_pressed" from="GUI" to="." method="_on_gui_play_button_pressed"]
 [connection signal="save_game" from="GUI" to="." method="_on_gui_save_game"]
