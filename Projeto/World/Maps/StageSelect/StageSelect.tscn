@@ -15,5 +15,5 @@ texture = ExtResource("1_2088f")
 [node name="Stages" type="Node2D" parent="."]
 
 [node name="StageIcon" parent="Stages" instance=ExtResource("2_ynipx")]
-position = Vector2(53, 36)
+position = Vector2(62, 60)
 stage_scene = ExtResource("3_4uqct")
