@@ -7,7 +7,6 @@ var stats : Resource = load("res://Managing/Persistent/Save1.tres")
 func prepare_save():
 	if save_exists():
 		read_savegame()
-		print("save existed")
 		return
 	write_savegame()
 

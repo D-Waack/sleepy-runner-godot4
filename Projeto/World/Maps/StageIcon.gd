@@ -32,14 +32,11 @@ func set_stat(data: Array): # data tem shine_count, puzzle get e numero de morte
 	if data[1]:
 		puzzle_display.set_visible(true)
 	
-	print(calculate_rank(data[0], data[1]))
-	
 	rank.text = "[center][color=black]" + (calculate_rank(data[0], data[1]))
 
 #[0,false,0],
 
 func calculate_rank(shine_count, puzzle_get):
-	print(shine_count)
 	var rating := 0
 	rating += shine_count
 	if puzzle_get: rating += 1
