@@ -22,7 +22,7 @@ func adjust_player2():
 	player.position = Vector2(-15, 178)
 
 func _on_start_button_button_up():
-	get_tree().change_scene_to_file("res://World/Maps/StageSelect.tscn")
+	get_tree().change_scene_to_file("res://World/Maps/StageSelect/StageSelect.tscn")
 
 func _on_quit_button_button_up():
 	get_tree().quit()

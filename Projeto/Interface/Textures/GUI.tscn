@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://v0q8o7awd27a" path="res://World/Objects/Collectables/Shines/shine.png" id="10_qnjp3"]
 [ext_resource type="Texture2D" uid="uid://c6deu8bxvr52y" path="res://World/Objects/Collectables/PuzzlePieces/puzzle_empty.png" id="11_5x6i6"]
 [ext_resource type="Texture2D" uid="uid://ccbgreq4f0nwg" path="res://World/Objects/Collectables/PuzzlePieces/puzzle.png" id="12_svbap"]
-[ext_resource type="Texture2D" uid="uid://bbwtvsyu7m282" path="res://World/Maps/Common/background_glacial_mountains.png" id="13_a0823"]
+[ext_resource type="Texture2D" uid="uid://bbwtvsyu7m282" path="res://World/Maps/Textures/background_glacial_mountains.png" id="13_a0823"]
 
 [node name="GUI" type="Control"]
 process_mode = 3

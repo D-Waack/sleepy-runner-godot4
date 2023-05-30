@@ -1,15 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://dvypo718pww18"]
+[gd_scene load_steps=12 format=3 uid="uid://b241uvbda12i4"]
 
-[ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="1_vkla4"]
-[ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/Textures/tileset_0.png" id="2_onpe1"]
-[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow.png" id="3_0qsvv"]
-[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow_right.png" id="4_jxwyn"]
-[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow_slopeless.png" id="5_4t6s2"]
-[ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Textures/shapes_tiles.png" id="6_af3pu"]
-[ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="7_t0yer"]
+[ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/Textures/tileset_0.png" id="1_lsrix"]
+[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow.png" id="2_alpm0"]
+[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow_right.png" id="3_fnb06"]
+[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow_slopeless.png" id="4_t4lj5"]
+[ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Textures/shapes_tiles.png" id="5_rs4pg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onouu"]
-texture = ExtResource("2_onpe1")
+texture = ExtResource("1_lsrix")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -20,7 +18,7 @@ texture = ExtResource("2_onpe1")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbnac"]
-texture = ExtResource("3_0qsvv")
+texture = ExtResource("2_alpm0")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -494,7 +492,7 @@ texture = ExtResource("3_0qsvv")
 11:3/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ta8dq"]
-texture = ExtResource("4_jxwyn")
+texture = ExtResource("3_fnb06")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
@@ -967,7 +965,7 @@ texture = ExtResource("4_jxwyn")
 11:3/0/terrains_peering_bit/top_side = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hoi41"]
-texture = ExtResource("5_4t6s2")
+texture = ExtResource("4_t4lj5")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 2
@@ -1439,7 +1437,7 @@ texture = ExtResource("5_4t6s2")
 11:3/0/terrains_peering_bit/top_side = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klk1s"]
-texture = ExtResource("6_af3pu")
+texture = ExtResource("5_rs4pg")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1489,7 +1487,7 @@ texture = ExtResource("6_af3pu")
 15:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:0/0/physics_layer_0/angular_velocity = 0.0
 
-[sub_resource type="TileSet" id="TileSet_7xtm2"]
+[sub_resource type="TileSet" id="TileSet_dpf6e"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
@@ -1504,32 +1502,13 @@ sources/2 = SubResource("TileSetAtlasSource_ta8dq")
 sources/3 = SubResource("TileSetAtlasSource_hoi41")
 sources/4 = SubResource("TileSetAtlasSource_klk1s")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwuvk"]
-resource_local_to_scene = true
-shader = ExtResource("7_t0yer")
-shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/width = 0.0
-shader_parameter/pattern = 2
-shader_parameter/inside = false
-shader_parameter/add_margins = true
-
-[node name="Platform" instance=ExtResource("1_vkla4")]
-
-[node name="Map" parent="." index="0"]
-tile_set = SubResource("TileSet_7xtm2")
-layer_0/tile_data = PackedInt32Array(65542, 589827, 2, 131078, 393219, 2, 196613, 393219, 2, 131077, 589827, 2, 65541, 589827, 2, 65540, 589827, 2, 65539, 589827, 2, 131075, 589827, 2, 131074, 524291, 2, 196609, 720897, 2, 196608, 589825, 2, 65538, 524291, 2, 196610, 524291, 2, 196611, 589827, 2, 131076, 589827, 2, 196612, 589827, 2, 262145, 720897, 2, 262146, 524291, 3, 262147, 589827, 3, 262148, 589827, 3, 65543, 720899, 2, 131079, 720899, 3, 196614, 720899, 3, 262149, 720899, 3, 393216, 720897, 3, 327680, 393217, 2, 327681, 720897, 3, 262144, 589825, 2, 65537, 720897, 2, 131073, 720897, 2, 65536, 327681, 1, 131072, 589825, 2, 196607, 327681, 1, 262143, 589825, 2, 327679, 589825, 2, 393215, 589825, 2, 458751, 589825, 3, 458750, 589825, 3, 393214, 589825, 2, 327678, 589825, 2, 262142, 327681, 1, 393213, 589825, 2, 458749, 589825, 3, 327677, 327681, 1, 458748, 524289, 3, 393212, 524289, 1, 0, 524289, 0, 131071, 524289, 0, 196606, 524289, 0, 262141, 524289, 0, 327676, 524289, 0, 1, 720897, 0, 5, 655363, 0, 4, 655363, 0, 3, 655363, 0, 2, 524291, 0, 6, 655363, 0, 7, 720899, 0)
-layer_1/tile_data = PackedInt32Array(2, 720900, 0, 3, 720900, 0, 4, 720900, 0, 5, 720900, 0, 0, 589828, 0, 131071, 589828, 0, 196606, 589828, 0, 262141, 589828, 0, 327676, 589828, 0, 1, 720900, 0, 6, 720900, 0, 7, 131076, 0, 65543, 917508, 0, 131079, 262148, 0, 196614, 262148, 0, 262149, 262148, 0, 262148, 786436, 0, 262147, 786436, 0, 262146, 786436, 0, 327681, 262148, 0, 393216, 262148, 0, 458748, 196612, 0, 393212, 851972, 0, 458749, 786436, 0, 458750, 786436, 0, 458751, 786436, 0)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
-visible = false
-polygon = PackedVector2Array(17, 1, 127, 2, 127, 47, 111, 47, 111, 63, 95, 63, 95, 79, 31, 79, 31, 95, 15, 95, 14, 111, -63, 111, -63, 80)
-
-[node name="Sprite2D" parent="." index="2"]
-visible = false
-material = SubResource("ShaderMaterial_jwuvk")
-texture = null
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D" index="0"]
-visible = false
-position = Vector2(-40, -8)
-polygon = PackedVector2Array(17, 1, 127, 2, 127, 47, 111, 47, 111, 63, 95, 63, 95, 79, 31, 79, 31, 95, 15, 95, 14, 111, -63, 111, -63, 80)
+[node name="Map" type="TileMap"]
+tile_set = SubResource("TileSet_dpf6e")
+format = 2
+layer_1/name = "Hihglight"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()

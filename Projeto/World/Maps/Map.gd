@@ -210,11 +210,11 @@ func _on_gui_resume_button_pressed():
 	get_tree().paused = false
 
 func _on_gui_exit_button_pressed():
-	get_tree().change_scene_to_file("res://World/Maps/StageSelect.tscn")
+	get_tree().change_scene_to_file("res://World/Maps/StageSelect/StageSelect.tscn")
 
 func _on_gui_save_game():
 	SaveManager.stats.world1[GlobalVariables.current_stage_index] = [shines_collected, puzzle_collected, 0]
 	SaveManager.write_savegame()
 
 func _on_gui_back_to_stage_select():
-	get_tree().change_scene_to_file("res://World/Maps/StageSelect.tscn")
+	get_tree().change_scene_to_file("res://World/Maps/StageSelect/StageSelect.tscn")

@@ -1,12 +1,12 @@
 [gd_scene load_steps=15 format=3 uid="uid://dgkk27uaggxv6"]
 
 [ext_resource type="PackedScene" uid="uid://bjrojkhge8ujm" path="res://World/Objects/Platform/Platform.tscn" id="1_epc55"]
-[ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/tileset_0.png" id="2_lcwi3"]
+[ext_resource type="Texture2D" uid="uid://oavi1jdtt5td" path="res://World/Maps/Textures/tileset_0.png" id="2_lcwi3"]
 [ext_resource type="Shader" path="res://World/Objects/Platform/Platform.gdshader" id="2_u8rsv"]
-[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/SnowMaps/Textures/autotile_snow.png" id="3_jpfuh"]
-[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/SnowMaps/Textures/autotile_snow_right.png" id="4_66v2w"]
-[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/SnowMaps/Textures/autotile_snow_slopeless.png" id="5_vpu24"]
-[ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Common/shapes_tiles.png" id="6_7nph1"]
+[ext_resource type="Texture2D" uid="uid://yhdbvqo8ag8s" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow.png" id="3_jpfuh"]
+[ext_resource type="Texture2D" uid="uid://q4i31qos1nwk" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow_right.png" id="4_66v2w"]
+[ext_resource type="Texture2D" uid="uid://vw66xmvkxku1" path="res://World/Maps/Stages/SnowMaps/Textures/autotile_snow_slopeless.png" id="5_vpu24"]
+[ext_resource type="Texture2D" uid="uid://dyxaqrp3rqwp1" path="res://World/Maps/Textures/shapes_tiles.png" id="6_7nph1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_onouu"]
 texture = ExtResource("2_lcwi3")
