@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var stage_scene: PackedScene
+@export var stage_index : int
 
 @onready var shine_display = $StageStats/ShineDisplay
 @onready var puzzle_display = $StageStats/PuzzleDisplay

@@ -4,7 +4,5 @@ extends Node2D
 
 func _ready():
 	var stats = SaveManager.stats
-	var index = 0
 	for stage in stages.get_children():
-		stage.set_stat(stats.world1[index])
-		index += 1
+		stage.set_stat(stats.world1[stage.stage_index])
