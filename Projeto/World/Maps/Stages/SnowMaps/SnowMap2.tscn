@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5kvh5ipdcrah"]
+
+[ext_resource type="PackedScene" uid="uid://r0dvuayrnyab" path="res://World/Maps/Stages/SnowMaps/SnowMap.tscn" id="1_783lu"]
+
+[node name="Map" instance=ExtResource("1_783lu")]
