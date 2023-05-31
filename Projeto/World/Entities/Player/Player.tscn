@@ -194,7 +194,6 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_yvg21")
 
 [node name="Bow" type="Node2D" parent="."]
-visible = false
 position = Vector2(8, 8)
 
 [node name="Sprite" type="Sprite2D" parent="Bow"]

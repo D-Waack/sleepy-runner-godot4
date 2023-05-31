@@ -10,6 +10,8 @@ class_name Player
 
 # Objects
 @onready var bow = $Bow
+@onready var bow_sprite = $Bow/Sprite
+@onready var Arrow = preload("res://World/Entities/Player/Arrow/Arrow.tscn")
 
 # Variáveis de animação
 @onready var animator = $AnimationTree.get("parameters/playback")
@@ -109,6 +111,13 @@ func release_bow():
 	bow_held = false
 	can_aim = false
 	bow_cooldown.start()
+	
+	var new_arrow = Arrow.instantiate()
+	get_tree().current_scene.add_child(new_arrow)
+	new_arrow.position = position
+	new_arrow.rotation_degrees = bow.rotation_degrees
+	new_arrow.direction = Vector2.RIGHT.rotated(bow.rotation)
+	new_arrow.set_physics_process(true)
 
 func _on_bow_timer_timeout():
 	bow_held = true
@@ -117,8 +126,8 @@ func _on_bow_timer_timeout():
 	bow.set_visible(true)
 
 func _on_bow_hold_timer_timeout():
-	release_bow()
+	if bow_held:
+		release_bow()
 
 func _on_bow_cooldown_timeout():
 	can_aim = true
-
