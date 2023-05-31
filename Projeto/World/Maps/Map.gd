@@ -8,6 +8,7 @@ extends Node2D
 @onready var tilemap = $Map
 @onready var objects = $Platforms
 @onready var markers = $Markers
+@onready var obstacles = $Obstacles
 
 ## Personagens, câmera
 @onready var camera = $Camera
@@ -219,3 +220,6 @@ func _on_gui_save_game():
 
 func _on_gui_back_to_stage_select():
 	get_tree().change_scene_to_file("res://World/Maps/StageSelect/StageSelect.tscn")
+
+func _on_triggers_trigger_broken():
+	obstacles.destroy_wall()

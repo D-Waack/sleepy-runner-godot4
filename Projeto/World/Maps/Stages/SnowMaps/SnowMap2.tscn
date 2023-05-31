@@ -1,5 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5kvh5ipdcrah"]
+[gd_scene load_steps=9 format=3 uid="uid://b5kvh5ipdcrah"]
 
 [ext_resource type="PackedScene" uid="uid://r0dvuayrnyab" path="res://World/Maps/Stages/SnowMaps/SnowMap.tscn" id="1_783lu"]
+[ext_resource type="PackedScene" uid="uid://dgkk27uaggxv6" path="res://World/Objects/Platform/Platforms/SnowPlatform2.tscn" id="2_4yd8y"]
+[ext_resource type="PackedScene" uid="uid://m6rrkgpe6mkk" path="res://World/Objects/Platform/Platforms/SnowPlatform4.tscn" id="3_3gvfl"]
+[ext_resource type="PackedScene" uid="uid://c443njvs1smcg" path="res://World/Objects/Platform/Platforms/SnowPlatform1.tscn" id="4_i2mxt"]
+[ext_resource type="PackedScene" uid="uid://eubewt4uuinm" path="res://World/Objects/Collectables/Shines/Shine.tscn" id="5_3ekxt"]
+[ext_resource type="PackedScene" uid="uid://cyxn2u52oulod" path="res://World/Objects/Collectables/PuzzlePieces/Puzzle.tscn" id="6_e2bew"]
+[ext_resource type="PackedScene" uid="uid://bcjcmuodcn7ry" path="res://World/Objects/Triggers/Trigger.tscn" id="7_qxuk3"]
+[ext_resource type="PackedScene" uid="uid://bld27eoi4upqt" path="res://World/Objects/Obstacles/Wall/Wall.tscn" id="8_k514h"]
 
 [node name="Map" instance=ExtResource("1_783lu")]
+
+[node name="Map" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(851970, 655361, 0, 917506, 589825, 3, 917505, 589825, 3, 851968, 655361, 0, 917504, 589825, 3, 851969, 655361, 0, 851971, 327681, 0, 917507, 589825, 3, 917508, 589825, 3, 917509, 589825, 3, 851973, 327681, 0, 851972, 393217, 0, 851974, 393217, 0, 917510, 589825, 3, 851975, 327681, 0, 917511, 327681, 3, 917503, 720897, 1, 983039, 589825, 3, 851967, 720897, 2, 786431, 720897, 2, 720895, 720897, 2, 655359, 720897, 2, 589823, 720897, 2, 524287, 720897, 2, 458751, 720897, 2, 393215, 720897, 2, 327679, 720897, 2, 262143, 720897, 2, 196607, 720897, 2, 131071, 720897, 2, 65535, 720897, 0, 65534, 524289, 0, 131070, 524289, 1, 196606, 524289, 1, 262142, 524289, 1, 327678, 524289, 1, 393214, 524289, 1, 458750, 524289, 1, 524286, 524289, 1, 589822, 524289, 1, 655358, 524289, 1, 720894, 524289, 1, 786430, 524289, 1, 851966, 524289, 1, 917502, 524289, 1, 983038, 524289, 3, 852019, 524291, 0, 852020, 655363, 0, 852021, 655363, 0, 852022, 655363, 0, 852023, 655363, 0, 852024, 655363, 0, 852025, 655363, 0, 852026, 655363, 0, 852027, 655363, 0, 852028, 655363, 0, 917564, 589827, 3, 917563, 589827, 3, 917562, 589827, 3, 917561, 589827, 3, 917560, 589827, 3, 917559, 589827, 3, 917558, 589827, 3, 917557, 589827, 3, 917556, 589827, 3, 917555, 524291, 3, 917565, 458755, 2, 852029, 393219, 0, 720905, 524289, 0, 786441, 327681, 1, 851977, 589825, 2, 917513, 589825, 3, 917514, 589825, 3, 851978, 589825, 2, 786442, 589825, 2, 720906, 327681, 1, 655370, 524289, 0, 720907, 720897, 2, 655371, 720897, 0, 786443, 720897, 2, 851979, 720897, 2, 917515, 720897, 3, 851976, 327681, 1, 917512, 589825, 3, 786440, 524289, 0, 851980, 524291, 0, 851981, 655363, 0, 851982, 655363, 0, 851983, 655363, 0, 851984, 655363, 0, 851985, 655363, 0, 851987, 655363, 0, 851986, 655363, 0, 851988, 655363, 0, 851989, 655363, 0, 851990, 655363, 0, 851991, 655363, 0, 851992, 655363, 0, 851993, 655363, 0, 851994, 655363, 0, 851995, 655363, 0, 851996, 655363, 0, 851997, 655363, 0, 851998, 720899, 0, 917534, 720899, 3, 917533, 589827, 3, 917532, 589827, 3, 917531, 589827, 3, 917530, 589827, 3, 917529, 589827, 3, 917528, 589827, 3, 917527, 589827, 3, 917525, 589827, 3, 917526, 589827, 3, 917524, 589827, 3, 917523, 589827, 3, 917522, 589827, 3, 917521, 589827, 3, 917520, 589827, 3, 917519, 589827, 3, 917518, 589827, 3, 917517, 589827, 3, 917516, 524291, 3)
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_4yd8y")]
+position = Vector2(208, 78)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("3_3gvfl")]
+position = Vector2(533, 175)
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("4_i2mxt")]
+position = Vector2(686, 98)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_4yd8y")]
+position = Vector2(407, 48)
+
+[node name="Shine" parent="Collectables" index="0" instance=ExtResource("5_3ekxt")]
+position = Vector2(211, 191)
+
+[node name="Shine2" parent="Collectables" index="1" instance=ExtResource("5_3ekxt")]
+position = Vector2(573, 77)
+
+[node name="Shine3" parent="Collectables" index="2" instance=ExtResource("5_3ekxt")]
+position = Vector2(570, 158)
+
+[node name="Puzzle" parent="Collectables" index="3" instance=ExtResource("6_e2bew")]
+position = Vector2(25, 67)
+
+[node name="Crystal" parent="Triggers" index="0" instance=ExtResource("7_qxuk3")]
+position = Vector2(734, 78)
+
+[node name="Wall" parent="Obstacles" index="0" instance=ExtResource("8_k514h")]
+position = Vector2(826, 81)
