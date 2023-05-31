@@ -3,6 +3,14 @@ extends CharacterBody2D
 # Declaração de classe
 class_name Player
 
+# Timers
+@onready var bow_timer = $Bow/BowTimer
+@onready var bow_hold_timer = $Bow/BowHoldTimer
+@onready var bow_cooldown = $BowCooldown
+
+# Objects
+@onready var bow = $Bow
+
 # Variáveis de animação
 @onready var animator = $AnimationTree.get("parameters/playback")
 @onready var sprite = $Sprite2D
@@ -19,6 +27,8 @@ var just_died = false
 var jumped = false
 var falling_threshold = -10.0
 @export var animation = false
+var can_aim = true
+var bow_held = false
 
 # Sinais
 signal dead
@@ -37,6 +47,17 @@ func _physics_process(delta):
 	elif jumped and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	jumped = false
+
+	if Input.is_action_pressed("aim") and not animation:
+		if can_aim and not bow_held:
+			if bow_timer.is_stopped():
+				bow_timer.start()
+		if bow_held:
+			bow.rotation_degrees = rad_to_deg(get_angle_to(get_global_mouse_position()))
+	else:
+		bow_timer.stop()
+		if bow_held:
+			release_bow()
 
 	if is_on_wall():
 		if just_died:
@@ -81,3 +102,23 @@ func animate():
 		animator.travel("fall")
 		return
 	animator.travel("run")
+
+func release_bow():
+	Engine.time_scale = 1.0
+	bow.set_visible(false)
+	bow_held = false
+	can_aim = false
+	bow_cooldown.start()
+
+func _on_bow_timer_timeout():
+	bow_held = true
+	bow_hold_timer.start()
+	Engine.time_scale = 0.3
+	bow.set_visible(true)
+
+func _on_bow_hold_timer_timeout():
+	release_bow()
+
+func _on_bow_cooldown_timeout():
+	can_aim = true
+

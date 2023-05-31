@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://0avjotwae8ft"]
+[gd_scene load_steps=29 format=3 uid="uid://0avjotwae8ft"]
 
 [ext_resource type="Script" path="res://World/Entities/Player/Player.gd" id="1_vcugp"]
 [ext_resource type="Texture2D" uid="uid://c1wo1t4yadsm2" path="res://World/Entities/Player/sleepy.png" id="2_ropgd"]
+[ext_resource type="Texture2D" uid="uid://dlte0epu3oqi7" path="res://World/Entities/Player/bow.png" id="3_fb2hm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3llv"]
 size = Vector2(15, 14)
@@ -191,3 +192,26 @@ tree_root = SubResource("AnimationNodeStateMachine_eirkt")
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_yvg21")
+
+[node name="Bow" type="Node2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+
+[node name="Sprite" type="Sprite2D" parent="Bow"]
+position = Vector2(12, -1)
+texture = ExtResource("3_fb2hm")
+hframes = 2
+
+[node name="BowTimer" type="Timer" parent="Bow"]
+wait_time = 0.4
+one_shot = true
+
+[node name="BowHoldTimer" type="Timer" parent="Bow"]
+one_shot = true
+
+[node name="BowCooldown" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Bow/BowTimer" to="." method="_on_bow_timer_timeout"]
+[connection signal="timeout" from="Bow/BowHoldTimer" to="." method="_on_bow_hold_timer_timeout"]
+[connection signal="timeout" from="BowCooldown" to="." method="_on_bow_cooldown_timeout"]
