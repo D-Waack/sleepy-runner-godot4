@@ -72,6 +72,7 @@ func _process(_delta):
 			interface.set_level_edit()
 			camera.can_drag = false
 		control_states.RUN:
+			camera.can_drag = false
 			interface.set_run()
 			camera.follow_along(player)
 		# Pause não roda, pois a execução fica pausada
