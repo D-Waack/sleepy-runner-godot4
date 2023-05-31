@@ -34,13 +34,13 @@ position = Vector2(624, 80)
 [node name="Platform8" parent="Platforms" index="6" instance=ExtResource("2_dkwkw")]
 position = Vector2(1072, 192)
 
-[node name="Collectable" parent="Collectables" index="0" instance=ExtResource("7_5tmpj")]
-position = Vector2(272, 160)
+[node name="Shine" parent="Collectables" index="0" instance=ExtResource("7_5tmpj")]
+position = Vector2(256, 176)
 
-[node name="Collectable2" parent="Collectables" index="1" instance=ExtResource("7_5tmpj")]
+[node name="Shine2" parent="Collectables" index="1" instance=ExtResource("7_5tmpj")]
 position = Vector2(640, 32)
 
-[node name="Collectable3" parent="Collectables" index="2" instance=ExtResource("7_5tmpj")]
+[node name="Shine3" parent="Collectables" index="2" instance=ExtResource("7_5tmpj")]
 position = Vector2(1104, 176)
 
 [node name="RightBoundary" parent="Boundaries" index="1"]
