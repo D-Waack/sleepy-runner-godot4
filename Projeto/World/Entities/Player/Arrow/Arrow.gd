@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-const SPEED = 150.0
+class_name Arrow
+
+const SPEED = 300.0
 
 var direction = Vector2.ZERO
 
