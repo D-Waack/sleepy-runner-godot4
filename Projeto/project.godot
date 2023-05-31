@@ -44,6 +44,8 @@ aim={
 
 2d_physics/layer_1="World"
 2d_physics/layer_2="Objects"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Arrow"
 
 [rendering]
 

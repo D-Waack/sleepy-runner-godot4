@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://World/Objects/Collectables/Collectable.gd" id="1_7ccw3"]
 
 [node name="Collectable" type="Area2D"]
+collision_layer = 2
+collision_mask = 12
 script = ExtResource("1_7ccw3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

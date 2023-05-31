@@ -169,6 +169,8 @@ graph_offset = Vector2(-125, -27)
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_yvg21"]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_vcugp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -194,6 +196,7 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_yvg21")
 
 [node name="Bow" type="Node2D" parent="."]
+visible = false
 position = Vector2(8, 8)
 
 [node name="Sprite" type="Sprite2D" parent="Bow"]

@@ -7,6 +7,7 @@
 size = Vector2(32, 224)
 
 [node name="Goal" type="Area2D"]
+collision_mask = 5
 script = ExtResource("1_hdubn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
