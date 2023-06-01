@@ -18,6 +18,11 @@ position = Vector2(518, 112)
 [node name="Shine3" parent="Collectables" index="2" instance=ExtResource("2_gfihx")]
 position = Vector2(762, 112)
 
+[node name="Markers" type="Node2D" parent="." index="4"]
+
+[node name="DeathMarker" parent="." index="5"]
+position = Vector2(0, 0)
+
 [node name="Owl" parent="Enemies" index="0" instance=ExtResource("3_kc8bf")]
 position = Vector2(520, 160)
 
@@ -27,5 +32,5 @@ position = Vector2(469, 81)
 [node name="Owl3" parent="Enemies" index="2" instance=ExtResource("3_kc8bf")]
 position = Vector2(569, 80)
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2(53, 98)

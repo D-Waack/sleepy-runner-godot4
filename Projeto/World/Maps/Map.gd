@@ -1,13 +1,10 @@
 extends Node2D
 
-# Cenas externas
-@onready var DeathMarker = preload("res://World/Objects/DeathMarker/DeathMarker.tscn")
-
 # Variaveis de nós
 ## Objetos, limites e mapa
 @onready var tilemap = $Map
 @onready var objects = $Platforms
-@onready var markers = $Markers
+@onready var marker = $DeathMarker
 @onready var obstacles = $Obstacles
 
 ## Personagens, câmera
@@ -103,15 +100,13 @@ func adjust_camera_position():
 ## Faz o processo para matar o player
 func kill_player():
 	var nearby_marker = false
-	for marker in markers.get_children():
-		marker.set_visible(true)
-		if player.position.distance_to(marker.position) <= min_marker_distance:
-			nearby_marker = true
+	if player.position.distance_to(marker.position) <= min_marker_distance:
+		nearby_marker = true
 	if not nearby_marker:
-		var new_marker = DeathMarker.instantiate()
-		markers.add_child(new_marker)
-		new_marker.position = Vector2(player.position.x, player.position.y - 10)
-		new_marker.sprite.set_modulate(Color(Color.WHITE,0.8))
+		marker.position = Vector2(player.position.x, player.position.y - 10)
+		marker.sprite.set_modulate(Color(Color.WHITE,0.8))
+		marker.set_visible(true)
+	print(nearby_marker)
 	player.kill()
 
 # Funções de sinais
@@ -139,8 +134,7 @@ func _on_gui_play_button_pressed():
 	camera.can_drag = false
 	
 	# fazer com que os markers desapareçam
-	for marker in markers.get_children():
-		marker.set_visible(false)
+	marker.set_visible(false)
 	
 	# volta a câmera a posição inicial
 	var tween = create_tween()

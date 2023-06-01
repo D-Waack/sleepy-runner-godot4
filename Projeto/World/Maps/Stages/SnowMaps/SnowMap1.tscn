@@ -46,17 +46,11 @@ position = Vector2(1104, 176)
 [node name="RightBoundary" parent="Boundaries" index="1"]
 position = Vector2(1392, 240)
 
-[node name="Goal" parent="." index="5"]
+[node name="Goal" parent="." index="8"]
 position = Vector2(1312, 192)
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="10"]
 position = Vector2(53, 194)
 
 [connection signal="item_collected" from="Platforms" to="." method="_on_collectables_item_collected"]
 [connection signal="kill_player" from="Platforms" to="." method="_on_platforms_kill_player"]
-[connection signal="edit_button_pressed" from="GUI" to="." method="_on_gui_edit_button_pressed"]
-[connection signal="exit_button_pressed" from="GUI" to="." method="_on_gui_exit_button_pressed"]
-[connection signal="jump_button_pressed" from="GUI" to="." method="_on_gui_jump_button_pressed"]
-[connection signal="pause_button_pressed" from="GUI" to="." method="_on_gui_pause_button_pressed"]
-[connection signal="restart_button_pressed" from="GUI" to="." method="_on_gui_restart_button_pressed"]
-[connection signal="resume_button_pressed" from="GUI" to="." method="_on_gui_resume_button_pressed"]
