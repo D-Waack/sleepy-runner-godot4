@@ -70,7 +70,7 @@ shape = SubResource("CapsuleShape2D_6qa1x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v1nkw")
-frame_progress = 0.445662
+frame_progress = 0.946955
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0
