@@ -42,3 +42,12 @@ func write_savegame():
 	
 	file.store_string(json_string)
 	file.close()
+
+func delete_savegame():
+	var error = DirAccess.remove_absolute(SAVE_PATH)
+	if error:
+		printerr("Could not find file %s. Delete is kill! Error code: %s" % [SAVE_PATH, error])
+	reset_savegame()
+
+func reset_savegame():
+	stats.reset_world()

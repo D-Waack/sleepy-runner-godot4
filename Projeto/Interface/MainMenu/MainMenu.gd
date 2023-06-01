@@ -26,3 +26,8 @@ func _on_start_button_button_up():
 
 func _on_quit_button_button_up():
 	get_tree().quit()
+
+func _on_delete_save_button_button_up():
+	if not SaveManager.save_exists(): return
+	SaveManager.delete_savegame()
+	get_tree().reload_current_scene()
