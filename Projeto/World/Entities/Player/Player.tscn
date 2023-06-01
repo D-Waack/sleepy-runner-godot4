@@ -205,10 +205,11 @@ texture = ExtResource("3_fb2hm")
 hframes = 2
 
 [node name="BowTimer" type="Timer" parent="Bow"]
-wait_time = 0.4
+wait_time = 0.2
 one_shot = true
 
 [node name="BowHoldTimer" type="Timer" parent="Bow"]
+wait_time = 0.4
 one_shot = true
 
 [node name="BowCooldown" type="Timer" parent="."]
