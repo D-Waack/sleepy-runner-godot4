@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwuwbnyw5amia"]
+[gd_scene load_steps=8 format=3 uid="uid://dwuwbnyw5amia"]
 
 [ext_resource type="Texture2D" uid="uid://d2goxn3ich27u" path="res://World/Maps/Textures/LevelSelect/stage_select_snow.png" id="1_2088f"]
 [ext_resource type="Script" path="res://World/Maps/StageSelect/StageSelect.gd" id="1_ifdc5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dsk47uyenioyq" path="res://World/Maps/Stages/SnowMaps/SnowMap1.tscn" id="3_4uqct"]
 [ext_resource type="PackedScene" uid="uid://b5kvh5ipdcrah" path="res://World/Maps/Stages/SnowMaps/SnowMap2.tscn" id="5_cvcp4"]
 [ext_resource type="PackedScene" uid="uid://cuj6tf5kvn8wx" path="res://World/Maps/Stages/SnowMaps/SnowMap3.tscn" id="6_n600m"]
+[ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/Textures/exit.png" id="7_nv670"]
 
 [node name="StageSelect" type="Node2D"]
 script = ExtResource("1_ifdc5")
@@ -29,3 +30,20 @@ stage_index = 1
 position = Vector2(244, 58)
 stage_scene = ExtResource("6_n600m")
 stage_index = 2
+
+[node name="SelectGUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SelectGUI"]
+
+[node name="ReturnButton" type="TextureButton" parent="SelectGUI/CanvasLayer"]
+offset_left = 299.0
+offset_top = 5.0
+offset_right = 315.0
+offset_bottom = 21.0
+texture_normal = ExtResource("7_nv670")
+
+[connection signal="button_up" from="SelectGUI/CanvasLayer/ReturnButton" to="." method="_on_return_button_button_up"]
