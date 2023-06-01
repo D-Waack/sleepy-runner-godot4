@@ -19,7 +19,7 @@ class_name Player
 
 # Constantes e variáveis físicas
 var SPEED = 160.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -360.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
