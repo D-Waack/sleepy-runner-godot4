@@ -9,3 +9,7 @@ func _ready():
 
 func _on_Collectable_collected(item_type):
 	emit_signal("item_collected", item_type)
+
+func uncollect():
+	for item in get_children():
+		item.collect(false)

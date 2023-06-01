@@ -6,6 +6,8 @@ extends Node2D
 @onready var objects = $Platforms
 @onready var marker = $DeathMarker
 @onready var obstacles = $Obstacles
+@onready var collectables = $Collectables
+@onready var platforms = $Platforms
 
 ## Personagens, câmera
 @onready var camera = $Camera
@@ -106,8 +108,10 @@ func kill_player():
 		marker.position = Vector2(player.position.x, player.position.y - 10)
 		marker.sprite.set_modulate(Color(Color.WHITE,0.8))
 		marker.set_visible(true)
-	print(nearby_marker)
 	player.kill()
+	collectables.uncollect()
+	platforms.uncollect()
+	
 
 # Funções de sinais
 ## Quando o personagem morre

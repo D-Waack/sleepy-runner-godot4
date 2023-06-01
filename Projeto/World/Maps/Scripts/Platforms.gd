@@ -40,3 +40,8 @@ func _on_Object_kill_player():
 
 func _on_Object_item_collected(type):
 	emit_signal("item_collected", type)
+
+func uncollect():
+	for platform in get_children():
+		if platform.collectables.get_child_count() != 0:
+			platform.collectables.get_child(0).collect(false)
