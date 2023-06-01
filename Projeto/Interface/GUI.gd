@@ -65,6 +65,9 @@ func set_pause():
 
 # Mostra o painel de vitória provisório
 func show_victory(shine_count, puzzle_get):
+	level_edit.set_visible(false)
+	run.set_visible(false)
+	pause.set_visible(false)
 	victory_panel.set_visible(true)
 	if shine_count > 0:
 		shine_display.set_size(Vector2(shine_count * tile_size, tile_size))
