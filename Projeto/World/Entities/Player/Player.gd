@@ -38,6 +38,8 @@ signal dead
 # Desativa o processo físico no início da execução
 func _ready():
 	set_physics_process(false)
+	floor_snap_length = 3.0
+	floor_constant_speed = true
 
 # Roda a todo frame. Verificações e cálculos de física
 func _physics_process(delta):
