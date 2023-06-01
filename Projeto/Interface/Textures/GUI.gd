@@ -7,6 +7,7 @@ extends Control
 @onready var victory_panel = $CanvasLayer/VictoryPanel
 @onready var shine_display = $CanvasLayer/VictoryPanel/ShineDisplay
 @onready var puzzle_display = $CanvasLayer/VictoryPanel/PuzzleDisplay
+@onready var rank = $CanvasLayer/VictoryPanel/Rank
 
 # constantes
 const tile_size = 16
@@ -72,6 +73,8 @@ func show_victory(shine_count, puzzle_get):
 		puzzle_display.set_size(Vector2(tile_size, tile_size))
 	else:
 		puzzle_display.set_visible(false)
+	
+	rank.text = "\n[center]" + str(GlobalVariables.calculate_rank(shine_count, puzzle_get))
 
 func _on_texture_button_button_up():
 	emit_signal("save_game")
