@@ -1,18 +1,18 @@
 [gd_scene load_steps=14 format=3 uid="uid://l1faff1x55u7"]
 
-[ext_resource type="Script" path="res://Interface/GUI.gd" id="1_8d3ng"]
-[ext_resource type="Texture2D" uid="uid://bue6u7axbhruh" path="res://Interface/playbutton.png" id="2_h2nvb"]
-[ext_resource type="Texture2D" uid="uid://c4d8jraug3rgn" path="res://Interface/restart.png" id="3_84mal"]
-[ext_resource type="Texture2D" uid="uid://cf2xv07j4ymao" path="res://Interface/scoreboard.png" id="4_2u5fd"]
-[ext_resource type="Texture2D" uid="uid://67puo40g7bv7" path="res://World/Objects/Collectables/Shines/shine_empty.png" id="4_7d5la"]
-[ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/exit.png" id="4_pyagw"]
-[ext_resource type="Texture2D" uid="uid://dd121ybqs2skm" path="res://Interface/pause.png" id="4_rwj5g"]
-[ext_resource type="Texture2D" uid="uid://cc3hhshhl8v4l" path="res://Interface/jump.png" id="5_dya8p"]
-[ext_resource type="Texture2D" uid="uid://v0q8o7awd27a" path="res://World/Objects/Collectables/Shines/shine.png" id="5_ny7hq"]
-[ext_resource type="Texture2D" uid="uid://csj7tnh4m4vf4" path="res://Interface/death.png" id="5_qwrht"]
-[ext_resource type="Texture2D" uid="uid://c6deu8bxvr52y" path="res://World/Objects/Collectables/PuzzlePieces/puzzle_empty.png" id="6_4c1ru"]
-[ext_resource type="Texture2D" uid="uid://ccbgreq4f0nwg" path="res://World/Objects/Collectables/PuzzlePieces/puzzle.png" id="7_3tfu8"]
-[ext_resource type="Texture2D" uid="uid://bbwtvsyu7m282" path="res://World/Maps/Common/background_glacial_mountains.png" id="8_h231e"]
+[ext_resource type="Script" path="res://Interface/GUI.gd" id="1_nftwf"]
+[ext_resource type="Texture2D" uid="uid://bue6u7axbhruh" path="res://Interface/Textures/playbutton.png" id="2_equnb"]
+[ext_resource type="Texture2D" uid="uid://c4d8jraug3rgn" path="res://Interface/Textures/restart.png" id="3_mkdcy"]
+[ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/Textures/exit.png" id="4_dtvby"]
+[ext_resource type="Texture2D" uid="uid://dd121ybqs2skm" path="res://Interface/Textures/pause.png" id="5_21pme"]
+[ext_resource type="Texture2D" uid="uid://cc3hhshhl8v4l" path="res://Interface/Textures/jump.png" id="6_x7mqw"]
+[ext_resource type="Texture2D" uid="uid://csj7tnh4m4vf4" path="res://Interface/Textures/death.png" id="7_vhwo0"]
+[ext_resource type="Texture2D" uid="uid://cf2xv07j4ymao" path="res://Interface/Textures/scoreboard.png" id="8_xl7wq"]
+[ext_resource type="Texture2D" uid="uid://67puo40g7bv7" path="res://World/Objects/Collectables/Shines/shine_empty.png" id="9_y4db4"]
+[ext_resource type="Texture2D" uid="uid://v0q8o7awd27a" path="res://World/Objects/Collectables/Shines/shine.png" id="10_t45dd"]
+[ext_resource type="Texture2D" uid="uid://c6deu8bxvr52y" path="res://World/Objects/Collectables/PuzzlePieces/puzzle_empty.png" id="11_vfb8y"]
+[ext_resource type="Texture2D" uid="uid://ccbgreq4f0nwg" path="res://World/Objects/Collectables/PuzzlePieces/puzzle.png" id="12_68277"]
+[ext_resource type="Texture2D" uid="uid://bbwtvsyu7m282" path="res://World/Maps/Textures/background_glacial_mountains.png" id="13_pa7et"]
 
 [node name="GUI" type="Control"]
 process_mode = 3
@@ -24,7 +24,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8d3ng")
+script = ExtResource("1_nftwf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -46,7 +46,7 @@ offset_right = 269.0
 offset_bottom = 190.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("2_h2nvb")
+texture_normal = ExtResource("2_equnb")
 
 [node name="RestartButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
 layout_mode = 1
@@ -60,7 +60,7 @@ offset_right = 269.0
 offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("3_84mal")
+texture_normal = ExtResource("3_mkdcy")
 
 [node name="ExitButton" type="TextureButton" parent="CanvasLayer/LevelEdit"]
 layout_mode = 1
@@ -74,7 +74,7 @@ offset_right = 269.0
 offset_bottom = -13.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("4_pyagw")
+texture_normal = ExtResource("4_dtvby")
 
 [node name="Run" type="Control" parent="CanvasLayer"]
 visible = false
@@ -95,7 +95,7 @@ offset_right = 269.0
 offset_bottom = 190.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("4_rwj5g")
+texture_normal = ExtResource("5_21pme")
 
 [node name="JumpButton" type="TextureButton" parent="CanvasLayer/Run"]
 layout_mode = 1
@@ -108,7 +108,7 @@ offset_right = 16.0
 offset_bottom = 190.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("5_dya8p")
+texture_normal = ExtResource("6_x7mqw")
 
 [node name="Pause" type="Control" parent="CanvasLayer"]
 process_mode = 2
@@ -153,7 +153,7 @@ offset_right = 269.0
 offset_bottom = 190.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("2_h2nvb")
+texture_normal = ExtResource("2_equnb")
 
 [node name="EditButton" type="TextureButton" parent="CanvasLayer/Pause"]
 layout_mode = 1
@@ -167,7 +167,7 @@ offset_right = 269.0
 offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("5_qwrht")
+texture_normal = ExtResource("7_vhwo0")
 
 [node name="ExitButton" type="TextureButton" parent="CanvasLayer/Pause"]
 layout_mode = 1
@@ -181,7 +181,7 @@ offset_right = 269.0
 offset_bottom = -13.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("4_pyagw")
+texture_normal = ExtResource("4_dtvby")
 
 [node name="VictoryPanel" type="TextureRect" parent="CanvasLayer"]
 visible = false
@@ -196,7 +196,7 @@ offset_right = 64.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("4_2u5fd")
+texture = ExtResource("8_xl7wq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/VictoryPanel"]
 layout_mode = 0
@@ -224,7 +224,7 @@ offset_left = 68.0
 offset_top = 47.0
 offset_right = 117.0
 offset_bottom = 63.0
-texture = ExtResource("4_7d5la")
+texture = ExtResource("9_y4db4")
 stretch_mode = 1
 
 [node name="ShineDisplay" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
@@ -233,7 +233,7 @@ offset_left = 68.0
 offset_top = 47.0
 offset_right = 117.0
 offset_bottom = 63.0
-texture = ExtResource("5_ny7hq")
+texture = ExtResource("10_t45dd")
 stretch_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
@@ -242,7 +242,7 @@ offset_left = 84.0
 offset_top = 69.0
 offset_right = 100.0
 offset_bottom = 85.0
-texture = ExtResource("6_4c1ru")
+texture = ExtResource("11_vfb8y")
 stretch_mode = 1
 
 [node name="PuzzleDisplay" type="TextureRect" parent="CanvasLayer/VictoryPanel"]
@@ -251,7 +251,7 @@ offset_left = 84.0
 offset_top = 69.0
 offset_right = 100.0
 offset_bottom = 85.0
-texture = ExtResource("7_3tfu8")
+texture = ExtResource("12_68277")
 stretch_mode = 1
 
 [node name="Rank" type="RichTextLabel" parent="CanvasLayer/VictoryPanel"]
@@ -264,6 +264,26 @@ bbcode_enabled = true
 text = "
 [center]A+
 "
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/VictoryPanel"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 156.0
+offset_right = 110.0
+offset_bottom = 178.0
+texture_normal = ExtResource("8_xl7wq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CanvasLayer/VictoryPanel/TextureButton"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -2.0
+offset_right = 105.0
+offset_bottom = 139.0
+mouse_filter = 1
+bbcode_enabled = true
+text = "[center]Continue"
 
 [node name="VictoryPanel2" type="ColorRect" parent="CanvasLayer"]
 visible = false
@@ -295,7 +315,7 @@ motion_mirroring = Vector2(460.8, 0)
 [node name="BackgroundSnow" type="Sprite2D" parent="CanvasLayer/Background/ParallaxLayer"]
 position = Vector2(230, 110)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("8_h231e")
+texture = ExtResource("13_pa7et")
 
 [connection signal="button_up" from="CanvasLayer/LevelEdit/PlayButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/LevelEdit/RestartButton" to="." method="_on_restart_button_button_up"]
@@ -305,3 +325,4 @@ texture = ExtResource("8_h231e")
 [connection signal="button_up" from="CanvasLayer/Pause/ResumeButton" to="." method="_on_resume_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Pause/EditButton" to="." method="_on_edit_button_button_up"]
 [connection signal="button_up" from="CanvasLayer/Pause/ExitButton" to="." method="_on_exit_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/VictoryPanel/TextureButton" to="." method="_on_texture_button_button_up"]
