@@ -223,3 +223,6 @@ func _on_gui_back_to_stage_select():
 
 func _on_triggers_trigger_broken():
 	obstacles.destroy_wall()
+
+func _on_enemies_kill_player():
+	kill_player()

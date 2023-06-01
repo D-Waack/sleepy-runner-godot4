@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qkcddvdcvhxo"]
+[gd_scene load_steps=12 format=3 uid="uid://qkcddvdcvhxo"]
 
 [ext_resource type="Script" path="res://World/Maps/Map.gd" id="1_hti4m"]
 [ext_resource type="PackedScene" uid="uid://b241uvbda12i4" path="res://World/Maps/Tilemap/TileMap.tscn" id="2_5w0gj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://World/Maps/Scripts/Triggers.gd" id="5_kcgaf"]
 [ext_resource type="Script" path="res://World/Maps/Scripts/Camera.gd" id="6_gia51"]
 [ext_resource type="PackedScene" uid="uid://0avjotwae8ft" path="res://World/Entities/Player/Player.tscn" id="6_h4hor"]
+[ext_resource type="Script" path="res://World/Maps/Scripts/Enemies.gd" id="7_4wag4"]
 [ext_resource type="PackedScene" uid="uid://vjw55rhe6sxp" path="res://World/Objects/Goal/Goal.tscn" id="7_mgths"]
 [ext_resource type="PackedScene" uid="uid://l1faff1x55u7" path="res://Interface/Textures/GUI.tscn" id="8_nklev"]
 
@@ -39,6 +40,9 @@ script = ExtResource("5_kcgaf")
 [node name="Obstacles" type="Node2D" parent="."]
 script = ExtResource("5_gneaw")
 
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource("7_4wag4")
+
 [node name="Goal" parent="." instance=ExtResource("7_mgths")]
 position = Vector2(864, 192)
 
@@ -55,8 +59,15 @@ position = Vector2(48, 192)
 [connection signal="fit_to_grid" from="Platforms" to="." method="_on_objects_fit_to_grid"]
 [connection signal="item_collected" from="Collectables" to="." method="_on_collectables_item_collected"]
 [connection signal="trigger_broken" from="Triggers" to="." method="_on_triggers_trigger_broken"]
+[connection signal="kill_player" from="Enemies" to="." method="_on_enemies_kill_player"]
 [connection signal="goal_reached" from="Goal" to="." method="_on_goal_goal_reached"]
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="back_to_stage_select" from="GUI" to="." method="_on_gui_back_to_stage_select"]
+[connection signal="edit_button_pressed" from="GUI" to="." method="_on_gui_edit_button_pressed"]
+[connection signal="exit_button_pressed" from="GUI" to="." method="_on_gui_exit_button_pressed"]
+[connection signal="jump_button_pressed" from="GUI" to="." method="_on_gui_jump_button_pressed"]
+[connection signal="pause_button_pressed" from="GUI" to="." method="_on_gui_pause_button_pressed"]
 [connection signal="play_button_pressed" from="GUI" to="." method="_on_gui_play_button_pressed"]
+[connection signal="restart_button_pressed" from="GUI" to="." method="_on_gui_restart_button_pressed"]
+[connection signal="resume_button_pressed" from="GUI" to="." method="_on_gui_resume_button_pressed"]
 [connection signal="save_game" from="GUI" to="." method="_on_gui_save_game"]
