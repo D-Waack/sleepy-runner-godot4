@@ -87,6 +87,7 @@ func _process(_delta):
 # Subrotinas de Process
 ## Configura estado atual com base em algumas condições
 func set_current_state():
+	if current_state == control_states.VICTORY: return
 	if objects.has_grabbed:
 		current_state = control_states.SELECT
 	elif play_pressed:
@@ -102,6 +103,7 @@ func adjust_camera_position():
 
 ## Faz o processo para matar o player
 func kill_player():
+	if current_state == control_states.VICTORY: return
 	var nearby_marker = false
 	if player.position.distance_to(marker.position) <= min_marker_distance:
 		nearby_marker = true
@@ -113,6 +115,8 @@ func kill_player():
 	collectables.uncollect()
 	platforms.uncollect()
 	
+	shines_collected = 0
+	puzzle_collected = false
 
 # Funções de sinais
 ## Quando o personagem morre
