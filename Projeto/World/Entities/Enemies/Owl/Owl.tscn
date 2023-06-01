@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlvjnij6gudh4"]
+[gd_scene load_steps=12 format=3 uid="uid://dlvjnij6gudh4"]
 
 [ext_resource type="Texture2D" uid="uid://dg8me1slk3bm3" path="res://World/Entities/Enemies/Owl/creepingowl.png" id="1_hadom"]
 [ext_resource type="Script" path="res://World/Entities/Enemies/Owl/Owl.gd" id="1_qclf2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6qa1x"]
-height = 20.0
+radius = 9.0
+height = 22.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d587w"]
 atlas = ExtResource("1_hadom")
@@ -56,63 +57,24 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="Animation" id="Animation_q8ct8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_d0f2t"]
-resource_name = "idle"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -3), Vector2(0, 0), Vector2(0, 3)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5g822"]
-_data = {
-"RESET": SubResource("Animation_q8ct8"),
-"idle": SubResource("Animation_d0f2t")
-}
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38wcd"]
 radius = 11.0
 
 [node name="Owl" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_qclf2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_6qa1x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v1nkw")
-frame_progress = 0.531262
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_5g822")
-}
+frame_progress = 0.445662
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 12
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("CapsuleShape2D_38wcd")

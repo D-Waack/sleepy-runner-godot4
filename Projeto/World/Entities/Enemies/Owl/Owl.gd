@@ -1,10 +1,27 @@
 extends CharacterBody2D
 
-@onready var animator = $AnimationPlayer
+@onready var tween_values = [0, 6]
+@onready var sprite = $AnimatedSprite2D
+
+var tween 
+
+signal kill_player
 
 func _ready():
-	animator.play("idle")
+	tween_values[0] = position.y
+	tween_values[1] += position.y
+	sprite.play("default")
+	start_tween()
+
+func start_tween():
+	tween = create_tween()
+	tween.tween_property(self, "position:y", tween_values[1], 0.3)
+	await tween.finished
+	tween.kill()
+	tween_values.reverse()
+	start_tween()
+	#tween_property(object: Object, property: NodePath, final_val: Variant, duration: float)
 
 func _on_hitbox_body_entered(body):
 	if body is Player:
-		body.kill()
+		emit_signal("kill_player")
