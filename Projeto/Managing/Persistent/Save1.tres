@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://dwafpkywunvy6"]
+[gd_resource type="Resource" script_class="Stats" load_steps=2 format=3 uid="uid://dh3oi3nfqqobi"]
 
-[ext_resource type="Script" path="res://Managing/Persistent/Stats.gd" id="1_38kmw"]
+[ext_resource type="Script" path="res://Managing/Persistent/Stats.gd" id="1_tv87x"]
 
 [resource]
-script = ExtResource("1_38kmw")
-world1 = [[0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0], [0, false, 0]]
+script = ExtResource("1_tv87x")
+world1 = [[0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"], [0, false, "C"]]

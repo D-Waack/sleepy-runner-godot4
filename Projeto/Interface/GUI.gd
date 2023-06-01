@@ -23,6 +23,7 @@ signal exit_button_pressed
 
 signal save_game
 signal back_to_stage_select
+signal rank_update
 
 # Emite o sinal para o botão de play
 func _on_play_button_button_up():
@@ -74,7 +75,9 @@ func show_victory(shine_count, puzzle_get):
 	else:
 		puzzle_display.set_visible(false)
 	
-	rank.text = "\n[center]" + str(GlobalVariables.calculate_rank(shine_count, puzzle_get))
+	var new_rank = GlobalVariables.calculate_rank(shine_count, puzzle_get)
+	rank.text = "\n[center]" + str(new_rank)
+	emit_signal("rank_update", new_rank)
 
 func _on_texture_button_button_up():
 	emit_signal("save_game")

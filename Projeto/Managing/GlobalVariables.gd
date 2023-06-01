@@ -13,3 +13,14 @@ func calculate_rank(shine_count, puzzle_get):
 		3: return 'S'
 		4: return 'S+'
 		_: return 'C'
+
+func calculate_best_rank(new_rank, old_rank):
+	if new_rank == 'S+' or old_rank == 'S+':
+		return 'S+'
+	if new_rank == 'S' or old_rank == 'S':
+		return 'S'
+	if new_rank == 'A' or old_rank == 'A':
+		return 'A'
+	if new_rank == 'B' or old_rank == 'B':
+		return 'B'
+	return 'C'

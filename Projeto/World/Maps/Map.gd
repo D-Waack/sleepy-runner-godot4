@@ -41,6 +41,7 @@ const left_drag_threshold = 0.15 # porcentagem mínima da tela para deslize dura
 var time_taken = 0.0
 var shines_collected = 0
 var puzzle_collected = false
+var rank = 'C'
 
 # Configuração inicial
 func _ready():
@@ -213,7 +214,13 @@ func _on_gui_exit_button_pressed():
 	get_tree().change_scene_to_file("res://World/Maps/StageSelect/StageSelect.tscn")
 
 func _on_gui_save_game():
-	SaveManager.stats.world1[GlobalVariables.current_stage_index] = [shines_collected, puzzle_collected, 0]
+	var current_stats = SaveManager.stats.world1[GlobalVariables.current_stage_index]
+	var best_rank = GlobalVariables.calculate_best_rank(rank,current_stats[2])
+	var best_puzzle = puzzle_collected if puzzle_collected else current_stats[1]
+	var best_shine = shines_collected
+	if current_stats[0] > shines_collected:
+		best_shine = current_stats[0]
+	SaveManager.stats.world1[GlobalVariables.current_stage_index] = [best_shine, best_puzzle, best_rank]
 	SaveManager.write_savegame()
 
 func _on_gui_back_to_stage_select():
@@ -224,3 +231,6 @@ func _on_triggers_trigger_broken():
 
 func _on_enemies_kill_player():
 	kill_player()
+
+func _on_gui_rank_update(new_rank):
+	rank = new_rank

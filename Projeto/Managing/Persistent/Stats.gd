@@ -4,16 +4,16 @@ class_name Stats
 const SAVE_PATH := "user://data.tres"
 
 @export var world1 : Array = [
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0],
-	[0,false,0]
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C'],
+	[0,false,'C']
 	]
 
 var worlds : Dictionary = {
