@@ -42,25 +42,21 @@ stage_scene = ExtResource("6_n600m")
 stage_index = 2
 
 [node name="StageIcon6" parent="Stages" instance=ExtResource("2_ynipx")]
-visible = false
 position = Vector2(73, 157)
 stage_scene = ExtResource("6_n600m")
 stage_index = 2
 
 [node name="StageIcon7" parent="Stages" instance=ExtResource("2_ynipx")]
-visible = false
 position = Vector2(133, 192)
 stage_scene = ExtResource("6_n600m")
 stage_index = 2
 
 [node name="StageIcon8" parent="Stages" instance=ExtResource("2_ynipx")]
-visible = false
 position = Vector2(206, 196)
 stage_scene = ExtResource("6_n600m")
 stage_index = 2
 
 [node name="StageIcon9" parent="Stages" instance=ExtResource("2_ynipx")]
-visible = false
 position = Vector2(257, 166)
 stage_scene = ExtResource("6_n600m")
 stage_index = 2
