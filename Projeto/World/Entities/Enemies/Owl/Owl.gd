@@ -1,11 +1,4 @@
-extends CharacterBody2D
-
-@onready var tween_values = [0, 6]
-@onready var sprite = $AnimatedSprite2D
-
-var tween 
-
-signal kill_player
+extends Enemy
 
 func _ready():
 	tween_values[0] = position.y
@@ -25,3 +18,7 @@ func start_tween():
 func _on_hitbox_body_entered(body):
 	if body is Player:
 		emit_signal("kill_player")
+
+func kill():
+	SoundManager.play_enemy_death()
+	queue_free()

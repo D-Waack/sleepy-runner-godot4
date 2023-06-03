@@ -61,7 +61,6 @@ animations = [{
 radius = 11.0
 
 [node name="Owl" type="CharacterBody2D"]
-collision_layer = 0
 script = ExtResource("1_qclf2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
