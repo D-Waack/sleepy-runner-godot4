@@ -27,24 +27,30 @@ signal rank_update
 
 # Emite o sinal para o botão de play
 func _on_play_button_button_up():
+	SoundManager.play_option()
 	emit_signal("play_button_pressed")
 
 func _on_restart_button_button_up():
+	SoundManager.play_option()
 	emit_signal("restart_button_pressed")
 
 func _on_pause_button_button_up():
+	SoundManager.play_option()
 	emit_signal("pause_button_pressed")
 
 func _on_jump_button_button_up():
 	emit_signal("jump_button_pressed")
 
 func _on_resume_button_button_up():
+	SoundManager.play_option()
 	emit_signal("resume_button_pressed")
 
 func _on_edit_button_button_up():
+	SoundManager.play_option()
 	emit_signal("edit_button_pressed")
 
 func _on_exit_button_button_up():
+	SoundManager.play_option()
 	emit_signal("exit_button_pressed")
 
 # Retorna a visibilidade dos botões de edição
@@ -83,5 +89,6 @@ func show_victory(shine_count, puzzle_get):
 	emit_signal("rank_update", new_rank)
 
 func _on_texture_button_button_up():
+	SoundManager.play_option()
 	emit_signal("save_game")
 	emit_signal("back_to_stage_select")
