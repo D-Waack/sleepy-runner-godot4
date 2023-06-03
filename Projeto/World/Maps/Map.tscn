@@ -64,6 +64,8 @@ position = Vector2(48, 192)
 [node name="GetSound" type="AudioStreamPlayer2D" parent="Audio"]
 stream = ExtResource("13_3cx22")
 
+[node name="Clapping" type="AudioStreamPlayer2D" parent="Audio"]
+
 [connection signal="fit_to_grid" from="Platforms" to="." method="_on_objects_fit_to_grid"]
 [connection signal="item_collected" from="Collectables" to="." method="_on_collectables_item_collected"]
 [connection signal="trigger_broken" from="Triggers" to="." method="_on_triggers_trigger_broken"]

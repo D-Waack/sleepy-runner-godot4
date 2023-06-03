@@ -18,6 +18,10 @@ extends Node2D
 
 ## Audio
 @onready var get_sound = $Audio/GetSound
+@onready var clapping = $Audio/Clapping
+@onready var clap1 = preload("res://World/Maps/Common/clapping_1.wav")
+@onready var clap2 = preload("res://World/Maps/Common/clapping_2.wav")
+@onready var clap3 = preload("res://World/Maps/Common/clapping_3.wav")
 
 # Variáveis de controle e máquina de estados
 enum control_states {PREPARE, SELECT, RUN, VICTORY, PAUSE} # estados da máquina
@@ -242,3 +246,14 @@ func _on_enemies_kill_player():
 
 func _on_gui_rank_update(new_rank):
 	rank = new_rank
+	match rank:
+		'S', 'S+':
+			clapping.stream = clap1
+		'A', 'B':
+			clapping.stream = clap2
+			clapping.volume_db = 22.0
+		_:
+			clapping.stream = clap3
+			clapping.volume_db = 22.0
+	
+	clapping.play()
