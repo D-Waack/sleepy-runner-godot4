@@ -16,6 +16,7 @@ class_name Player
 # Sounds
 @onready var jump_sound = $Sounds/JumpSound
 @onready var death_sound = $Sounds/DeathSound
+@onready var arrow_sound = $Sounds/ArrowSound
 
 # Variáveis de animação
 @onready var animator = $AnimationTree.get("parameters/playback")
@@ -116,6 +117,8 @@ func animate():
 	animator.travel("run")
 
 func release_bow():
+	arrow_sound.play()
+	
 	Engine.time_scale = 1.0
 	bow.set_visible(false)
 	bow_held = false

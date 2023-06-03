@@ -14,6 +14,8 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	
 	if collision:
+		if collision.get_collider() is Enemy:
+			collision.get_collider().kill()
 		set_physics_process(false)
 
 func _on_timer_timeout():

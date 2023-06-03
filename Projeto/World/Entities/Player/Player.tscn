@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://0avjotwae8ft"]
+[gd_scene load_steps=32 format=3 uid="uid://0avjotwae8ft"]
 
 [ext_resource type="Script" path="res://World/Entities/Player/Player.gd" id="1_vcugp"]
 [ext_resource type="Texture2D" uid="uid://c1wo1t4yadsm2" path="res://World/Entities/Player/sleepy.png" id="2_ropgd"]
 [ext_resource type="Texture2D" uid="uid://dlte0epu3oqi7" path="res://World/Entities/Player/bow.png" id="3_fb2hm"]
 [ext_resource type="AudioStream" uid="uid://hc8cboxd488v" path="res://World/Entities/Player/Sounds/jump_sound.wav" id="4_atr28"]
-[ext_resource type="AudioStream" uid="uid://c31gjqoxr6lb6" path="res://World/Entities/Player/Sounds/death_sound.wav" id="5_m608i"]
+[ext_resource type="AudioStream" uid="uid://ck4puffhjw3yi" path="res://World/Maps/Common/poof.mp3" id="5_7lv3a"]
+[ext_resource type="AudioStream" uid="uid://c1d8at6wgt01s" path="res://World/Maps/Common/arrow_shoot.wav" id="6_sykrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3llv"]
 size = Vector2(15, 14)
@@ -223,7 +224,10 @@ one_shot = true
 stream = ExtResource("4_atr28")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("5_m608i")
+stream = ExtResource("5_7lv3a")
+
+[node name="ArrowSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_sykrl")
 
 [connection signal="timeout" from="Bow/BowTimer" to="." method="_on_bow_timer_timeout"]
 [connection signal="timeout" from="Bow/BowHoldTimer" to="." method="_on_bow_hold_timer_timeout"]
