@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cj7ka3o80n04" path="res://Common/Fonts/Future TimeSplitters.otf" id="2_5bj2s"]
 [ext_resource type="PackedScene" uid="uid://0avjotwae8ft" path="res://World/Entities/Player/Player.tscn" id="3_akyp5"]
 [ext_resource type="Texture2D" uid="uid://due6g8euhpob0" path="res://Interface/MainMenu/button_1.png" id="5_p7w8n"]
-[ext_resource type="AudioStream" uid="uid://ck28fp7wb5ch7" path="res://Common/Music/Restless_feet4.wav" id="6_lg485"]
+[ext_resource type="AudioStream" uid="uid://dbrnoojjk7mpb" path="res://Common/Audio/Restless_feet4.ogg" id="6_kpp4l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tn7gs"]
 texture = ExtResource("1_uoovl")
@@ -403,8 +403,8 @@ theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]delete save"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_lg485")
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kpp4l")
 
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
