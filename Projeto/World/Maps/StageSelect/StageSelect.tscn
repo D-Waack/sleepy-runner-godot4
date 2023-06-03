@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dwuwbnyw5amia"]
 
-[ext_resource type="Texture2D" uid="uid://d2goxn3ich27u" path="res://World/Maps/Textures/LevelSelect/stage_select_snow.png" id="1_2088f"]
 [ext_resource type="Script" path="res://World/Maps/StageSelect/StageSelect.gd" id="1_ifdc5"]
+[ext_resource type="Texture2D" uid="uid://d2goxn3ich27u" path="res://World/Maps/StageSelect/stage_select_snow.png" id="2_ncexf"]
 [ext_resource type="PackedScene" uid="uid://dm4bw3mtvnmfa" path="res://World/Maps/StageSelect/StageIcon/StageIcon.tscn" id="2_ynipx"]
 [ext_resource type="PackedScene" uid="uid://dsk47uyenioyq" path="res://World/Maps/Stages/SnowMaps/SnowMap1.tscn" id="3_4uqct"]
 [ext_resource type="PackedScene" uid="uid://b5kvh5ipdcrah" path="res://World/Maps/Stages/SnowMaps/SnowMap2.tscn" id="5_cvcp4"]
@@ -13,7 +13,7 @@ script = ExtResource("1_ifdc5")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(160, 120)
-texture = ExtResource("1_2088f")
+texture = ExtResource("2_ncexf")
 
 [node name="Stages" type="Node2D" parent="."]
 
@@ -28,6 +28,36 @@ stage_index = 1
 
 [node name="StageIcon3" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(244, 58)
+stage_scene = ExtResource("6_n600m")
+stage_index = 2
+
+[node name="StageIcon4" parent="Stages" instance=ExtResource("2_ynipx")]
+position = Vector2(221, 111)
+stage_scene = ExtResource("6_n600m")
+stage_index = 2
+
+[node name="StageIcon5" parent="Stages" instance=ExtResource("2_ynipx")]
+position = Vector2(165, 117)
+stage_scene = ExtResource("6_n600m")
+stage_index = 2
+
+[node name="StageIcon6" parent="Stages" instance=ExtResource("2_ynipx")]
+position = Vector2(73, 157)
+stage_scene = ExtResource("6_n600m")
+stage_index = 2
+
+[node name="StageIcon7" parent="Stages" instance=ExtResource("2_ynipx")]
+position = Vector2(133, 192)
+stage_scene = ExtResource("6_n600m")
+stage_index = 2
+
+[node name="StageIcon8" parent="Stages" instance=ExtResource("2_ynipx")]
+position = Vector2(206, 196)
+stage_scene = ExtResource("6_n600m")
+stage_index = 2
+
+[node name="StageIcon9" parent="Stages" instance=ExtResource("2_ynipx")]
+position = Vector2(257, 166)
 stage_scene = ExtResource("6_n600m")
 stage_index = 2
 

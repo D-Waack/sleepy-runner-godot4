@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dm4bw3mtvnmfa"]
 
-[ext_resource type="Texture2D" uid="uid://76epebo3c5y1" path="res://World/Maps/Textures/LevelSelect/StageIcon/stage_icon.png" id="1_2wv6q"]
 [ext_resource type="Script" path="res://World/Maps/StageSelect/StageIcon/StageIcon.gd" id="1_8lxr7"]
-[ext_resource type="Texture2D" uid="uid://c4xd1dvq1v2sr" path="res://World/Maps/Textures/LevelSelect/StageIcon/littleshine_empty.png" id="3_uf0h8"]
-[ext_resource type="Texture2D" uid="uid://cpcrxlts5aqj3" path="res://World/Maps/Textures/LevelSelect/StageIcon/littleshine.png" id="4_an4v4"]
-[ext_resource type="Texture2D" uid="uid://bm3xfpdl60vc0" path="res://World/Maps/Textures/LevelSelect/StageIcon/littlepuzzle.png" id="5_lyexa"]
-[ext_resource type="Texture2D" uid="uid://ts437oogmtfy" path="res://World/Maps/Textures/LevelSelect/StageIcon/littlepuzzle_empty.png" id="6_q8dqj"]
+[ext_resource type="Texture2D" uid="uid://76epebo3c5y1" path="res://World/Maps/StageSelect/StageIcon/stage_icon.png" id="2_67u8t"]
+[ext_resource type="Texture2D" uid="uid://c4xd1dvq1v2sr" path="res://World/Maps/StageSelect/StageIcon/littleshine_empty.png" id="2_52127"]
+[ext_resource type="Texture2D" uid="uid://cpcrxlts5aqj3" path="res://World/Maps/StageSelect/StageIcon/littleshine.png" id="3_c0a1t"]
+[ext_resource type="Texture2D" uid="uid://bm3xfpdl60vc0" path="res://World/Maps/StageSelect/StageIcon/littlepuzzle.png" id="4_lrcva"]
+[ext_resource type="Texture2D" uid="uid://ts437oogmtfy" path="res://World/Maps/StageSelect/StageIcon/littlepuzzle_empty.png" id="5_r5xjh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwybq"]
 size = Vector2(34, 34)
@@ -18,7 +18,7 @@ script = ExtResource("1_8lxr7")
 shape = SubResource("RectangleShape2D_lwybq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_2wv6q")
+texture = ExtResource("2_67u8t")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -14.0
@@ -48,7 +48,7 @@ offset_left = 27.3333
 offset_top = 161.667
 offset_right = 57.3333
 offset_bottom = 169.667
-texture = ExtResource("3_uf0h8")
+texture = ExtResource("2_52127")
 stretch_mode = 1
 
 [node name="ShineDisplay" type="TextureRect" parent="StageStats"]
@@ -58,7 +58,7 @@ offset_left = 27.3333
 offset_top = 161.667
 offset_right = 57.3333
 offset_bottom = 169.667
-texture = ExtResource("4_an4v4")
+texture = ExtResource("3_c0a1t")
 stretch_mode = 1
 
 [node name="PuzzleDisplay" type="TextureRect" parent="StageStats"]
@@ -68,7 +68,7 @@ offset_left = 40.6667
 offset_top = 200.0
 offset_right = 48.6667
 offset_bottom = 208.0
-texture = ExtResource("5_lyexa")
+texture = ExtResource("4_lrcva")
 stretch_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="StageStats"]
@@ -77,7 +77,7 @@ offset_left = 40.6667
 offset_top = 200.0
 offset_right = 48.6667
 offset_bottom = 208.0
-texture = ExtResource("6_q8dqj")
+texture = ExtResource("5_r5xjh")
 stretch_mode = 1
 
 [node name="Rank" type="RichTextLabel" parent="StageStats"]
