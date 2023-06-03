@@ -8,10 +8,14 @@ class_name Player
 @onready var bow_hold_timer = $Bow/BowHoldTimer
 @onready var bow_cooldown = $BowCooldown
 
-# Objects
+# Objetos
 @onready var bow = $Bow
 @onready var bow_sprite = $Bow/Sprite
 @onready var Arrow = preload("res://World/Entities/Player/Arrow/Arrow.tscn")
+
+# Sounds
+@onready var jump_sound = $Sounds/JumpSound
+@onready var death_sound = $Sounds/DeathSound
 
 # Variáveis de animação
 @onready var animator = $AnimationTree.get("parameters/playback")
@@ -48,8 +52,10 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not animation:
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 	elif jumped and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 	jumped = false
 
 	if Input.is_action_pressed("aim") and not animation:
@@ -69,6 +75,7 @@ func _physics_process(delta):
 		else:
 			velocity.y = JUMP_VELOCITY/2
 			facing_direction *= -1
+			jump_sound.play()
 
 	var direction = facing_direction
 	velocity.x = direction * SPEED
@@ -84,6 +91,7 @@ func kill():
 	emit_signal("dead")
 	jumped = false
 	velocity.y = 0
+	death_sound.play()
 
 # Reinicia o processo físico e reseta o personagem à posição padrão
 func reset_start():
