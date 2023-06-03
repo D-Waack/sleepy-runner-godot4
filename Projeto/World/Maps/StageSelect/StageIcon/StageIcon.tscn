@@ -35,57 +35,59 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -185.0
-offset_right = 64.0
-offset_bottom = -29.0
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = 17.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="StageStats"]
 layout_mode = 0
-offset_left = 27.3333
-offset_top = 161.667
-offset_right = 57.3333
-offset_bottom = 169.667
+offset_left = -21.3333
+offset_top = -6.33331
+offset_right = 8.66667
+offset_bottom = 1.66669
 texture = ExtResource("2_52127")
 stretch_mode = 1
 
 [node name="ShineDisplay" type="TextureRect" parent="StageStats"]
 visible = false
 layout_mode = 0
-offset_left = 27.3333
-offset_top = 161.667
-offset_right = 57.3333
-offset_bottom = 169.667
+offset_left = -21.3333
+offset_top = -6.33331
+offset_right = 8.66667
+offset_bottom = 1.66669
 texture = ExtResource("3_c0a1t")
 stretch_mode = 1
 
 [node name="PuzzleDisplay" type="TextureRect" parent="StageStats"]
 visible = false
 layout_mode = 0
-offset_left = 40.6667
-offset_top = 200.0
-offset_right = 48.6667
-offset_bottom = 208.0
+offset_left = -4.66667
+offset_top = 30.3333
+offset_right = 3.33333
+offset_bottom = 38.3333
 texture = ExtResource("4_lrcva")
 stretch_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="StageStats"]
 layout_mode = 0
-offset_left = 40.6667
-offset_top = 200.0
-offset_right = 48.6667
-offset_bottom = 208.0
+offset_left = -4.66666
+offset_top = 30.3333
+offset_right = 3.33334
+offset_bottom = 38.3333
 texture = ExtResource("5_r5xjh")
 stretch_mode = 1
 
 [node name="Rank" type="RichTextLabel" parent="StageStats"]
 layout_mode = 0
-offset_left = 75.6667
-offset_top = 153.333
-offset_right = 103.667
-offset_bottom = 177.333
+offset_left = 27.0
+offset_top = -14.6667
+offset_right = 55.0003
+offset_bottom = 9.33333
+mouse_filter = 1
 bbcode_enabled = true
 text = "[center][color=black]A+"
 
