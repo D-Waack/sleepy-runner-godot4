@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dudf2jlx7kwoi"]
+[gd_scene load_steps=12 format=3 uid="uid://dudf2jlx7kwoi"]
 
 [ext_resource type="Script" path="res://Interface/MainMenu/MainMenu.gd" id="1_atldi"]
 [ext_resource type="Texture2D" uid="uid://klxxpr77b5vt" path="res://Interface/MainMenu/soil_autotile.png" id="1_uoovl"]
 [ext_resource type="FontFile" uid="uid://cj7ka3o80n04" path="res://Common/Fonts/Future TimeSplitters.otf" id="2_5bj2s"]
 [ext_resource type="PackedScene" uid="uid://0avjotwae8ft" path="res://World/Entities/Player/Player.tscn" id="3_akyp5"]
 [ext_resource type="Texture2D" uid="uid://due6g8euhpob0" path="res://Interface/MainMenu/button_1.png" id="5_p7w8n"]
+[ext_resource type="AudioStream" uid="uid://ck28fp7wb5ch7" path="res://Common/Music/Restless_feet4.wav" id="6_lg485"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tn7gs"]
 texture = ExtResource("1_uoovl")
@@ -401,6 +402,9 @@ theme_override_fonts/normal_font = ExtResource("2_5bj2s")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]delete save"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lg485")
 
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]

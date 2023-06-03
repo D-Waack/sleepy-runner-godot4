@@ -2,9 +2,11 @@ extends Control
 
 @onready var player = $Player
 @onready var animator = $AnimationPlayer
+@onready var audio = $AudioStreamPlayer
 
 func _ready():
 	SaveManager.prepare_save()
+	audio.play()
 	animator.play("run")
 	player.set_physics_process(true)
 	player.SPEED = 120.0
