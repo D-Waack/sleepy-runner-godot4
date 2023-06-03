@@ -16,6 +16,9 @@ extends Node2D
 ## Interface gráfica
 @onready var interface = $GUI
 
+## Audio
+@onready var get_sound = $Audio/GetSound
+
 # Variáveis de controle e máquina de estados
 enum control_states {PREPARE, SELECT, RUN, VICTORY, PAUSE} # estados da máquina
 var current_state = 0 # estado atual
@@ -190,6 +193,7 @@ func _on_platforms_kill_player():
 	kill_player()
 
 func _on_collectables_item_collected(item_type):
+	get_sound.play()
 	match item_type:
 		0:
 			shines_collected += 1
