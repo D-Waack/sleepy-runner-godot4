@@ -14,6 +14,8 @@ var mouse_in = false
 const tile_size = 10
 const tile_size_y = 8
 
+signal change_scene
+
 func _ready():
 	stage_number.text = str(stage_index + 1)
 
@@ -21,8 +23,7 @@ func _input(event):
 	if not mouse_in: return
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			GlobalVariables.current_stage_index = stage_index
-			get_tree().change_scene_to_packed(stage_scene)
+			emit_signal("change_scene", stage_index, stage_scene)
 
 func _on_mouse_entered():
 	mouse_in = true

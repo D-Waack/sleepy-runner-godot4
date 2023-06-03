@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwuwbnyw5amia"]
+[gd_scene load_steps=9 format=3 uid="uid://dwuwbnyw5amia"]
 
 [ext_resource type="Script" path="res://World/Maps/StageSelect/StageSelect.gd" id="1_ifdc5"]
 [ext_resource type="Texture2D" uid="uid://d2goxn3ich27u" path="res://World/Maps/StageSelect/stage_select_snow.png" id="2_ncexf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5kvh5ipdcrah" path="res://World/Maps/Stages/SnowMaps/SnowMap2.tscn" id="5_cvcp4"]
 [ext_resource type="PackedScene" uid="uid://cuj6tf5kvn8wx" path="res://World/Maps/Stages/SnowMaps/SnowMap3.tscn" id="6_n600m"]
 [ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/Textures/exit.png" id="7_nv670"]
+[ext_resource type="AudioStream" uid="uid://b18x60rv754qg" path="res://World/Maps/StageSelect/Silent_Trees.ogg" id="8_krsua"]
 
 [node name="StageSelect" type="Node2D"]
 script = ExtResource("1_ifdc5")
@@ -75,5 +76,8 @@ offset_top = 5.0
 offset_right = 315.0
 offset_bottom = 21.0
 texture_normal = ExtResource("7_nv670")
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_krsua")
 
 [connection signal="button_up" from="SelectGUI/CanvasLayer/ReturnButton" to="." method="_on_return_button_button_up"]
