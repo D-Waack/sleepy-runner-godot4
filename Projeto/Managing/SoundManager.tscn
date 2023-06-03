@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://5mhb3lcbfcp7"]
+[gd_scene load_steps=5 format=3 uid="uid://5mhb3lcbfcp7"]
 
 [ext_resource type="AudioStream" uid="uid://bmso6iye21yed" path="res://Common/Audio/click_sound.wav" id="1_lyiaq"]
 [ext_resource type="Script" path="res://Managing/SoundManager.gd" id="1_vbhr8"]
+[ext_resource type="AudioStream" uid="uid://ck4puffhjw3yi" path="res://World/Maps/Common/poof.mp3" id="3_omqt7"]
+[ext_resource type="AudioStream" uid="uid://bouarpe1txgc8" path="res://World/Maps/Common/glass_break_1.ogg" id="4_dppae"]
 
 [node name="SoundManager" type="Node2D"]
 script = ExtResource("1_vbhr8")
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_lyiaq")
+
+[node name="EnemyDeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_omqt7")
+
+[node name="CrystalBreakSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dppae")
