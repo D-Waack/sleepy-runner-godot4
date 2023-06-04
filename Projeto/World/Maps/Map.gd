@@ -22,6 +22,7 @@ extends Node2D
 @onready var clap1 = preload("res://World/Maps/Common/clapping_1.wav")
 @onready var clap2 = preload("res://World/Maps/Common/clapping_2.wav")
 @onready var clap3 = preload("res://World/Maps/Common/clapping_3.wav")
+@onready var bgm = $Audio/BGM
 
 # Variáveis de controle e máquina de estados
 enum control_states {PREPARE, SELECT, RUN, VICTORY, PAUSE} # estados da máquina
@@ -52,6 +53,9 @@ var rank = 'C'
 
 # Configuração inicial
 func _ready():
+	# Musica
+	bgm.play()
+	
 	# Limites da câmera são configurados
 	camera.limit_left = limit_left
 	camera.limit_bottom = limit_bottom

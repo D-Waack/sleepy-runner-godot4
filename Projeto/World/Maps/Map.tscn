@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qkcddvdcvhxo"]
+[gd_scene load_steps=15 format=3 uid="uid://qkcddvdcvhxo"]
 
 [ext_resource type="Script" path="res://World/Maps/Map.gd" id="1_hti4m"]
 [ext_resource type="PackedScene" uid="uid://b241uvbda12i4" path="res://World/Maps/Tilemap/TileMap.tscn" id="2_5w0gj"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://vjw55rhe6sxp" path="res://World/Objects/Goal/Goal.tscn" id="7_mgths"]
 [ext_resource type="PackedScene" uid="uid://l1faff1x55u7" path="res://Interface/GUI.tscn" id="8_nklev"]
 [ext_resource type="AudioStream" uid="uid://j0h4lgw6ll7y" path="res://World/Objects/Collectables/get_sound.wav" id="13_3cx22"]
+[ext_resource type="AudioStream" uid="uid://px4f48cpyr26" path="res://Common/Audio/cold_raindrops.wav" id="14_qfogs"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_hti4m")
@@ -65,6 +66,9 @@ position = Vector2(48, 192)
 stream = ExtResource("13_3cx22")
 
 [node name="Clapping" type="AudioStreamPlayer2D" parent="Audio"]
+
+[node name="BGM" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("14_qfogs")
 
 [connection signal="fit_to_grid" from="Platforms" to="." method="_on_objects_fit_to_grid"]
 [connection signal="item_collected" from="Collectables" to="." method="_on_collectables_item_collected"]
