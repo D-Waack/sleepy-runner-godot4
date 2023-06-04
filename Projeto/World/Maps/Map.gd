@@ -227,6 +227,7 @@ func _on_gui_resume_button_pressed():
 	get_tree().paused = false
 
 func _on_gui_exit_button_pressed():
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://World/Maps/StageSelect/StageSelect.tscn")
 
 func _on_gui_save_game():
