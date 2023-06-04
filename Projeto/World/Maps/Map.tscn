@@ -69,6 +69,7 @@ stream = ExtResource("13_3cx22")
 
 [node name="BGM" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_qfogs")
+volume_db = -4.0
 
 [connection signal="fit_to_grid" from="Platforms" to="." method="_on_objects_fit_to_grid"]
 [connection signal="item_collected" from="Collectables" to="." method="_on_collectables_item_collected"]

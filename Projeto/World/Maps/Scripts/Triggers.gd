@@ -8,3 +8,7 @@ func _ready():
 
 func _on_Trigger_destroyed():
 	emit_signal("trigger_broken")
+
+func unbreak():
+	for trigger in get_children():
+		trigger.break_trigger(false)

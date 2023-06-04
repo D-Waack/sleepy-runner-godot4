@@ -8,3 +8,7 @@ func _ready():
 
 func _on_Enemy_kill_player():
 	emit_signal("kill_player")
+
+func unkill():
+	for enemy in get_children():
+		enemy.die(false)

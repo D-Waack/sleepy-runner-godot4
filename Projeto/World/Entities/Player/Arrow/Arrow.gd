@@ -16,7 +16,8 @@ func _physics_process(delta):
 	if collision:
 		if collision.get_collider() is Enemy:
 			collision.get_collider().kill()
-		set_physics_process(false)
+		else:
+			set_physics_process(false)
 
 func _on_timer_timeout():
 	queue_free()

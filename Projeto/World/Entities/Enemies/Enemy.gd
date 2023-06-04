@@ -4,10 +4,14 @@ class_name Enemy
 
 @onready var tween_values = [0, 6]
 @onready var sprite = $AnimatedSprite2D
+@onready var collision_shape = $CollisionShape2D
+@onready var hitbox_collision_shape = $Hitbox/CollisionShape2D2
 
 var tween 
 
 signal kill_player
+
+var killed = false
 
 func _ready():
 	tween_values[0] = position.y
@@ -30,4 +34,10 @@ func _on_hitbox_body_entered(body):
 
 func kill():
 	SoundManager.play_enemy_death()
-	queue_free()
+	die(true)
+
+func die(flag: bool):
+	killed = flag
+	set_visible(not flag)
+	collision_shape.set_deferred("disabled", flag)
+	hitbox_collision_shape.set_deferred("disabled", flag)

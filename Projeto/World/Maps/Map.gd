@@ -8,6 +8,8 @@ extends Node2D
 @onready var obstacles = $Obstacles
 @onready var collectables = $Collectables
 @onready var platforms = $Platforms
+@onready var triggers = $Triggers
+@onready var enemies = $Enemies
 
 ## Personagens, câmera
 @onready var camera = $Camera
@@ -125,6 +127,9 @@ func kill_player():
 	player.kill()
 	collectables.uncollect()
 	platforms.uncollect()
+	triggers.unbreak()
+	enemies.unkill()
+	obstacles.unhide()
 	
 	shines_collected = 0
 	puzzle_collected = false

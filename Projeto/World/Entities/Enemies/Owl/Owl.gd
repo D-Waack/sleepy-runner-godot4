@@ -19,6 +19,3 @@ func _on_hitbox_body_entered(body):
 	if body is Player:
 		emit_signal("kill_player")
 
-func kill():
-	SoundManager.play_enemy_death()
-	queue_free()
