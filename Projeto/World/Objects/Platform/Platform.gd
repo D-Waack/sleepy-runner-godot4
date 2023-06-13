@@ -64,7 +64,7 @@ func _process(_delta):
 			make_fit()
 	else:
 		if grabbed:
-			make_fit()
+			#make_fit()
 			fit_check()
 		grab_timer.stop()
 		grabbed = false
