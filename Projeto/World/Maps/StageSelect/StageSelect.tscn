@@ -1,13 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://dwuwbnyw5amia"]
+[gd_scene load_steps=15 format=3 uid="uid://dwuwbnyw5amia"]
 
 [ext_resource type="Script" path="res://World/Maps/StageSelect/StageSelect.gd" id="1_ifdc5"]
 [ext_resource type="Texture2D" uid="uid://d2goxn3ich27u" path="res://World/Maps/StageSelect/stage_select_snow.png" id="2_ncexf"]
 [ext_resource type="PackedScene" uid="uid://dm4bw3mtvnmfa" path="res://World/Maps/StageSelect/StageIcon/StageIcon.tscn" id="2_ynipx"]
 [ext_resource type="PackedScene" uid="uid://dsk47uyenioyq" path="res://World/Maps/Stages/SnowMaps/SnowMap1.tscn" id="3_4uqct"]
 [ext_resource type="PackedScene" uid="uid://b5kvh5ipdcrah" path="res://World/Maps/Stages/SnowMaps/SnowMap2.tscn" id="5_cvcp4"]
-[ext_resource type="PackedScene" uid="uid://cuj6tf5kvn8wx" path="res://World/Maps/Stages/SnowMaps/SnowMap3.tscn" id="6_n600m"]
+[ext_resource type="PackedScene" uid="uid://df5vsm4c1s74d" path="res://World/Maps/Stages/SnowMaps/SnowMap3.tscn" id="6_n600m"]
+[ext_resource type="PackedScene" uid="uid://cuj6tf5kvn8wx" path="res://World/Maps/Stages/SnowMaps/SnowMap4.tscn" id="7_dsw8b"]
 [ext_resource type="Texture2D" uid="uid://c0teqpnhgytun" path="res://Interface/Textures/exit.png" id="7_nv670"]
+[ext_resource type="PackedScene" uid="uid://deochdkj7i02v" path="res://World/Maps/Stages/SnowMaps/SnowMap5.tscn" id="8_dn2dv"]
 [ext_resource type="AudioStream" uid="uid://b18x60rv754qg" path="res://World/Maps/StageSelect/Silent_Trees.ogg" id="8_krsua"]
+[ext_resource type="PackedScene" uid="uid://ctepdyle6hdsv" path="res://World/Maps/Stages/SnowMaps/SnowMap6.tscn" id="9_4aqup"]
+[ext_resource type="PackedScene" uid="uid://d0v1cje0c0yo3" path="res://World/Maps/Stages/SnowMaps/SnowMap7.tscn" id="10_3c3u3"]
+[ext_resource type="PackedScene" uid="uid://d13i1714wkbnf" path="res://World/Maps/Stages/SnowMaps/SnowMap8.tscn" id="11_r2sae"]
+[ext_resource type="PackedScene" uid="uid://bqdmnlmkr77if" path="res://World/Maps/Stages/SnowMaps/SnowMap9.tscn" id="12_rx8gr"]
 
 [node name="StageSelect" type="Node2D"]
 script = ExtResource("1_ifdc5")
@@ -34,33 +40,33 @@ stage_index = 2
 
 [node name="StageIcon4" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(221, 111)
-stage_scene = ExtResource("6_n600m")
-stage_index = 2
+stage_scene = ExtResource("7_dsw8b")
+stage_index = 3
 
 [node name="StageIcon5" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(165, 117)
-stage_scene = ExtResource("6_n600m")
-stage_index = 2
+stage_scene = ExtResource("8_dn2dv")
+stage_index = 4
 
 [node name="StageIcon6" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(73, 157)
-stage_scene = ExtResource("6_n600m")
-stage_index = 2
+stage_scene = ExtResource("9_4aqup")
+stage_index = 5
 
 [node name="StageIcon7" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(133, 192)
-stage_scene = ExtResource("6_n600m")
-stage_index = 2
+stage_scene = ExtResource("10_3c3u3")
+stage_index = 6
 
 [node name="StageIcon8" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(206, 196)
-stage_scene = ExtResource("6_n600m")
-stage_index = 2
+stage_scene = ExtResource("11_r2sae")
+stage_index = 7
 
 [node name="StageIcon9" parent="Stages" instance=ExtResource("2_ynipx")]
 position = Vector2(257, 166)
-stage_scene = ExtResource("6_n600m")
-stage_index = 2
+stage_scene = ExtResource("12_rx8gr")
+stage_index = 8
 
 [node name="SelectGUI" type="Control" parent="."]
 layout_mode = 3
