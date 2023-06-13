@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://d13i1714wkbnf"]
+
+[ext_resource type="PackedScene" uid="uid://r0dvuayrnyab" path="res://World/Maps/Stages/SnowMaps/SnowMap.tscn" id="1_3b4ey"]
+[ext_resource type="PackedScene" uid="uid://xgrqjbtcw5qf" path="res://World/Objects/Platform/Platforms/SnowPlatform6.tscn" id="2_bnyt8"]
+[ext_resource type="PackedScene" uid="uid://c443njvs1smcg" path="res://World/Objects/Platform/Platforms/SnowPlatform1.tscn" id="3_yadpo"]
+[ext_resource type="PackedScene" uid="uid://eubewt4uuinm" path="res://World/Objects/Collectables/Shines/Shine.tscn" id="4_p5kjp"]
+[ext_resource type="PackedScene" uid="uid://dgkk27uaggxv6" path="res://World/Objects/Platform/Platforms/SnowPlatform2.tscn" id="4_tkw5u"]
+[ext_resource type="PackedScene" uid="uid://cyxn2u52oulod" path="res://World/Objects/Collectables/PuzzlePieces/Puzzle.tscn" id="5_maj8y"]
+[ext_resource type="PackedScene" uid="uid://m6rrkgpe6mkk" path="res://World/Objects/Platform/Platforms/SnowPlatform4.tscn" id="5_rfgnd"]
+
+[node name="Map" instance=ExtResource("1_3b4ey")]
+
+[node name="Map" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(851970, 655363, 0, 917506, 589827, 2, 917505, 327683, 2, 851968, 655363, 0, 917504, 589827, 3, 851969, 655363, 0, 851971, 655363, 0, 917507, 589827, 2, 917508, 589827, 2, 917509, 589827, 2, 851973, 655363, 0, 851972, 655363, 0, 851974, 655363, 0, 917510, 393219, 2, 851975, 655363, 0, 917511, 589827, 3, 917503, 393219, 1, 983039, 589827, 3, 851967, 720899, 2, 786431, 720899, 2, 720895, 720899, 2, 655359, 720899, 2, 589823, 720899, 2, 524287, 720899, 2, 458751, 720899, 2, 393215, 720899, 2, 327679, 720899, 2, 262143, 458755, 2, 196607, 720899, 2, 131071, 720899, 2, 65534, 524291, 2, 131070, 524291, 2, 196606, 524291, 2, 262142, 458755, 0, 327678, 524291, 2, 393214, 524291, 2, 458750, 524291, 2, 524286, 524291, 1, 589822, 524291, 2, 655358, 524291, 1, 720894, 524291, 1, 786430, 524291, 2, 851966, 524291, 1, 917502, 524291, 1, 983038, 524291, 3, 851976, 655363, 0, 917512, 589827, 3, 917513, 589827, 3, 851977, 655363, 0, 262141, 65539, 3, 983041, 524291, 3, 983042, 589827, 3, 983043, 589827, 3, 983044, 589827, 3, 983045, 589827, 3, 983046, 720899, 3, 65535, 720899, 2, -1, 720899, 2, -65537, 720899, 2, -131073, 720899, 2, -196609, 720899, 2, -262145, 720899, 2, -327682, 524291, 1, -393218, 524291, 1, -458754, 524291, 0, -262146, 524291, 1, -196610, 524291, 2, -131074, 524291, 1, -65538, 524291, 2, -2, 524291, 1, -327681, 720899, 2, -393217, 720899, 2, -458753, 720899, 0, 851978, 720899, 0, 917514, 720899, 3, 262184, 524291, 0, 327720, 524291, 2, 393256, 524291, 2, 458792, 524291, 2, 524328, 524291, 1, 917544, 524291, 3, 852008, 524291, 2, 786472, 524291, 1, 720936, 524291, 1, 655400, 524291, 2, 589864, 524291, 2, 917545, 589827, 3, 852009, 589827, 2, 786473, 589827, 2, 720937, 589827, 2, 655401, 589827, 2, 589865, 589827, 2, 524329, 589827, 2, 458793, 589827, 2, 393257, 589827, 2, 327721, 589827, 2, 262185, 655363, 0, 262186, 655363, 0, 327722, 589827, 2, 393258, 589827, 2, 458794, 589827, 2, 524330, 589827, 2, 589866, 589827, 2, 655402, 589827, 2, 720938, 589827, 2, 786474, 589827, 2, 852010, 589827, 2, 917546, 589827, 3, 262188, 655363, 0, 327724, 589827, 2, 393260, 589827, 2, 458796, 589827, 2, 524332, 589827, 2, 655403, 589827, 2, 589868, 589827, 2, 720939, 589827, 2, 786475, 589827, 2, 852011, 589827, 2, 917547, 327683, 2, 983083, 524291, 1, 1048619, 524291, 3, 1048620, 720899, 3, 983084, 720899, 2, 917548, 393219, 2, 917549, 589827, 3, 852012, 589827, 2, 786476, 589827, 2, 720940, 589827, 2, 655404, 589827, 2, 655405, 589827, 2, 720941, 589827, 2, 786477, 589827, 2, 852013, 589827, 2, 589869, 589827, 2, 524333, 589827, 2, 458797, 589827, 2, 393261, 589827, 2, 327725, 589827, 2, 262189, 655363, 0, 262190, 655363, 0, 327726, 589827, 2, 393262, 589827, 2, 458798, 589827, 2, 524334, 589827, 2, 589870, 589827, 2, 655406, 589827, 2, 720942, 589827, 2, 786478, 589827, 2, 852014, 589827, 2, 917550, 589827, 3, 917551, 720899, 3, 852015, 720899, 2, 786479, 720899, 2, 720943, 720899, 2, 655407, 720899, 2, 589871, 720899, 2, 524335, 720899, 2, 458799, 720899, 2, 393263, 720899, 2, 327727, 720899, 2, 262191, 720899, 0, 327723, 589827, 2, 262187, 655363, 0, 393259, 589827, 2, 458795, 589827, 2, 524331, 589827, 2, 589867, 589827, 2)
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("2_bnyt8")]
+position = Vector2(448, 176)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("3_yadpo")]
+position = Vector2(64, 64)
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("4_tkw5u")]
+position = Vector2(304, 48)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("5_rfgnd")]
+position = Vector2(208, 176)
+
+[node name="Platform5" parent="Platforms" index="4" instance=ExtResource("5_rfgnd")]
+position = Vector2(544, 96)
+
+[node name="Platform6" parent="Platforms" index="5" instance=ExtResource("2_bnyt8")]
+position = Vector2(448, 0)
+
+[node name="Shine" parent="Collectables" index="0" instance=ExtResource("4_p5kjp")]
+position = Vector2(64, 128)
+
+[node name="Shine2" parent="Collectables" index="1" instance=ExtResource("4_p5kjp")]
+position = Vector2(304, 176)
+
+[node name="Shine3" parent="Collectables" index="2" instance=ExtResource("4_p5kjp")]
+position = Vector2(512, 80)
+
+[node name="Puzzle" parent="Collectables" index="3" instance=ExtResource("5_maj8y")]
+position = Vector2(64, 32)
+
+[node name="RightBoundary" parent="Boundaries" index="1"]
+position = Vector2(720, 240)
+
+[node name="Goal" parent="." index="8"]
+position = Vector2(672, 48)

@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://cuj6tf5kvn8wx"]
+
+[ext_resource type="PackedScene" uid="uid://r0dvuayrnyab" path="res://World/Maps/Stages/SnowMaps/SnowMap.tscn" id="1_oj8mq"]
+[ext_resource type="PackedScene" uid="uid://eubewt4uuinm" path="res://World/Objects/Collectables/Shines/Shine.tscn" id="2_1elw2"]
+[ext_resource type="PackedScene" uid="uid://dxvwth0e0rgf6" path="res://World/Objects/Platform/Platforms/SnowPlatform5.tscn" id="2_e4xxq"]
+[ext_resource type="PackedScene" uid="uid://xgrqjbtcw5qf" path="res://World/Objects/Platform/Platforms/SnowPlatform6.tscn" id="4_136c5"]
+[ext_resource type="PackedScene" uid="uid://dvypo718pww18" path="res://World/Objects/Platform/Platforms/SnowPlatform3.tscn" id="4_upe3y"]
+[ext_resource type="PackedScene" uid="uid://dgkk27uaggxv6" path="res://World/Objects/Platform/Platforms/SnowPlatform2.tscn" id="5_ol6ne"]
+[ext_resource type="PackedScene" uid="uid://c443njvs1smcg" path="res://World/Objects/Platform/Platforms/SnowPlatform1.tscn" id="6_52ohg"]
+[ext_resource type="PackedScene" uid="uid://cyxn2u52oulod" path="res://World/Objects/Collectables/PuzzlePieces/Puzzle.tscn" id="8_ggikp"]
+
+[node name="Map" instance=ExtResource("1_oj8mq")]
+
+[node name="Map" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(851970, 589827, 2, 917506, 589827, 3, 917505, 589827, 3, 851968, 589827, 2, 917504, 589827, 3, 851969, 589827, 2, 851971, 589827, 2, 917507, 589827, 3, 917508, 589827, 3, 917509, 589827, 3, 851973, 589827, 2, 851972, 589827, 2, 851974, 589827, 2, 917510, 589827, 3, 851975, 589827, 2, 917511, 589827, 3, 917503, 589827, 2, 983039, 589827, 3, 851967, 393219, 1, 786431, 720899, 2, 720895, 720899, 2, 655359, 720899, 2, 589823, 720899, 2, 524287, 720899, 2, 458751, 720899, 2, 393215, 720899, 2, 327679, 720899, 0, 262143, 720897, 3, 196607, 720897, 2, 131071, 720897, 2, 65535, 720897, 0, 65534, 524289, 0, 131070, 524289, 1, 196606, 524289, 1, 262142, 524289, 3, 327678, 524291, 0, 393214, 524291, 2, 458750, 524291, 2, 524286, 524291, 2, 589822, 524291, 2, 655358, 524291, 2, 720894, 524291, 1, 786430, 524291, 1, 851966, 524291, 2, 917502, 524291, 2, 983038, 524291, 3, 852019, 655363, 0, 852020, 655363, 0, 852021, 655363, 0, 852022, 655363, 0, 852023, 655363, 0, 852024, 655363, 0, 852025, 655363, 0, 852026, 655363, 0, 852027, 655363, 0, 852028, 655363, 0, 917564, 589827, 3, 917563, 589827, 3, 917562, 589827, 3, 917561, 589827, 3, 917560, 589827, 3, 917559, 589827, 3, 917558, 589827, 3, 917557, 589827, 3, 917556, 589827, 3, 917555, 589827, 3, 917565, 458755, 2, 852029, 393219, 0, 786432, 655363, 0, 786433, 655363, 0, 786434, 655363, 0, 786435, 655363, 0, 786436, 655363, 0, 786437, 655363, 0, 786442, 720899, 0, 786441, 655363, 0, 851977, 589827, 2, 851976, 589827, 2, 786440, 655363, 0, 786439, 655363, 0, 786438, 655363, 0, 851978, 720899, 2, 917514, 720899, 3, 917513, 589827, 3, 917512, 589827, 3, 852017, 524291, 0, 852018, 655363, 0, 917554, 589827, 3, 917553, 524291, 3)
+
+[node name="Platform" parent="Platforms" index="0" instance=ExtResource("5_ol6ne")]
+position = Vector2(247, 58)
+
+[node name="Platform2" parent="Platforms" index="1" instance=ExtResource("6_52ohg")]
+position = Vector2(469, 8)
+
+[node name="Platform3" parent="Platforms" index="2" instance=ExtResource("4_upe3y")]
+position = Vector2(727, -10)
+
+[node name="Platform4" parent="Platforms" index="3" instance=ExtResource("2_e4xxq")]
+position = Vector2(570, 149)
+
+[node name="Platform5" parent="Platforms" index="4" instance=ExtResource("4_136c5")]
+position = Vector2(403, 174)
+
+[node name="Shine" parent="Collectables" index="0" instance=ExtResource("2_1elw2")]
+position = Vector2(364, 172)
+
+[node name="Shine2" parent="Collectables" index="1" instance=ExtResource("2_1elw2")]
+position = Vector2(526, 89)
+
+[node name="Shine3" parent="Collectables" index="2" instance=ExtResource("2_1elw2")]
+position = Vector2(626, 131)
+
+[node name="Puzzle" parent="Collectables" index="3" instance=ExtResource("8_ggikp")]
+position = Vector2(787, 16)
+
+[node name="Markers" type="Node2D" parent="." index="4"]
+
+[node name="Player" parent="." index="11"]
+position = Vector2(53, 178)
